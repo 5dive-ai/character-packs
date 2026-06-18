@@ -1,0 +1,23 @@
+{
+  "packFormat": 1,
+  "agentName": "olivia",
+  "createdWith": "0.3.13",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "opus",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "compile-knowledge",
+    "notify-user",
+    "5dive-cli"
+  ],
+  "hooks": {},
+  "avatar": "avatar.png",
+  "skillsBundled": true
+}

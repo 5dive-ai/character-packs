@@ -25,6 +25,123 @@
         "notify-user"
       ],
       "skillsBundled": true
+    },
+    {
+      "slug": "theo",
+      "name": "Theo",
+      "tagline": "The terminally-online CMO \u2014 meme-brain, format-first, gen-z cadence. Ships content that earns the laugh.",
+      "character": "CMO",
+      "track": "A",
+      "tags": [
+        "marketing",
+        "creative",
+        "content",
+        "cmo"
+      ],
+      "path": "packs/theo",
+      "avatar": "packs/theo/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "5dive-cli"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "dario",
+      "name": "Dario",
+      "tagline": "The junior dev \u2014 builds first, specs second. Minimum code that does the job. No gold-plating.",
+      "character": "junior dev",
+      "track": "A",
+      "tags": [
+        "dev",
+        "engineering",
+        "coding",
+        "junior"
+      ],
+      "path": "packs/dario",
+      "avatar": "packs/dario/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "5dive-cli"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "marcus",
+      "name": "Marcus",
+      "tagline": "The CTO \u2014 methodical, reliability-obsessed, writes the runbook before you need it. Owns infra and on-call.",
+      "character": "CTO / senior eng-ops",
+      "track": "A",
+      "tags": [
+        "cto",
+        "engineering",
+        "ops",
+        "infra",
+        "senior"
+      ],
+      "path": "packs/marcus",
+      "avatar": "packs/marcus/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "5dive-cli"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "dude",
+      "name": "Dude",
+      "tagline": "The community lead \u2014 reads the discourse first, ships insight density not noise. Honest, public-facing, never a press release.",
+      "character": "community lead",
+      "track": "A",
+      "tags": [
+        "community",
+        "dx",
+        "reddit",
+        "github",
+        "hn"
+      ],
+      "path": "packs/dude",
+      "avatar": "packs/dude/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "5dive-cli"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "olivia",
+      "name": "Olivia",
+      "tagline": "The AI CEO \u2014 conductor not specialist. Reads state, routes work, catches slippage, escalates with context.",
+      "character": "AI CEO / conductor",
+      "track": "A",
+      "tags": [
+        "ceo",
+        "orchestration",
+        "conductor",
+        "delegation"
+      ],
+      "path": "packs/olivia",
+      "avatar": "packs/olivia/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "5dive-cli"
+      ],
+      "skillsBundled": true
     }
   ]
 }
