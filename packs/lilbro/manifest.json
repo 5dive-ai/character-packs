@@ -1,0 +1,15 @@
+{
+  "packFormat": 1,
+  "agentName": "lilbro",
+  "createdWith": "0.3.13",
+  "includes": { "memory": false },
+  "config": {
+    "type": "claude",
+    "model": null,
+    "effort": null,
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": ["compile-knowledge", "notify-user"],
+  "hooks": {}
+}

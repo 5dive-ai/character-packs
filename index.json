@@ -1,0 +1,20 @@
+{
+  "registryFormat": 1,
+  "name": "5dive character packs",
+  "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
+  "updated": "2026-06-18",
+  "packs": [
+    {
+      "slug": "lilbro",
+      "name": "Lil bro",
+      "tagline": "Your eager junior teammate — grabs the grunt work, ships a rough draft fast, asks the dumb question.",
+      "character": "junior generalist",
+      "track": "A",
+      "tags": ["junior", "fast", "eager", "generalist"],
+      "path": "packs/lilbro",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": ["compile-knowledge", "notify-user"]
+    }
+  ]
+}
