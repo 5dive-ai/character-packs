@@ -17,5 +17,6 @@
     "notify-user"
   ],
   "hooks": {},
-  "avatar": "avatar.png"
+  "avatar": "avatar.png",
+  "skillsBundled": true
 }

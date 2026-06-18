@@ -7,15 +7,24 @@
     {
       "slug": "lilbro",
       "name": "Lil bro",
-      "tagline": "Your eager junior teammate — grabs the grunt work, ships a rough draft fast, asks the dumb question.",
+      "tagline": "Your eager junior teammate \u2014 grabs the grunt work, ships a rough draft fast, asks the dumb question.",
       "character": "junior generalist",
       "track": "A",
-      "tags": ["junior", "fast", "eager", "generalist"],
+      "tags": [
+        "junior",
+        "fast",
+        "eager",
+        "generalist"
+      ],
       "path": "packs/lilbro",
       "avatar": "packs/lilbro/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
-      "skills": ["compile-knowledge", "notify-user"]
+      "skills": [
+        "compile-knowledge",
+        "notify-user"
+      ],
+      "skillsBundled": true
     }
   ]
 }

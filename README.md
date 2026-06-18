@@ -23,11 +23,12 @@ packs/<slug>/
   manifest.json            # pack manifest (packFormat:1) — config + skill/plugin refs, no secrets
   CLAUDE.md                # the persona / system prompt
   avatar.png               # square character avatar (optional; shown in browse + set on import)
+  skills/<skill>/SKILL.md  # bundled skill bodies — pack is self-contained, no separate repo lookup
   card.md                  # human-readable preview card (optional)
 ```
 
 Each `index.json` entry: `slug`, `name`, `tagline`, `character`, `track`, `tags`,
-`path`, `avatar` (optional), `packFormat`, `includesMemory`, `skills`.
+`path`, `avatar` (optional), `packFormat`, `includesMemory`, `skills`, `skillsBundled`.
 
 ## Publish a pack
 
