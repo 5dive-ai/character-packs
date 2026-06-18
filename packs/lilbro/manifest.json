@@ -2,7 +2,9 @@
   "packFormat": 1,
   "agentName": "lilbro",
   "createdWith": "0.3.13",
-  "includes": { "memory": false },
+  "includes": {
+    "memory": false
+  },
   "config": {
     "type": "claude",
     "model": null,
@@ -10,6 +12,10 @@
     "isolation": "standard"
   },
   "plugins": [],
-  "skills": ["compile-knowledge", "notify-user"],
-  "hooks": {}
+  "skills": [
+    "compile-knowledge",
+    "notify-user"
+  ],
+  "hooks": {},
+  "avatar": "avatar.png"
 }

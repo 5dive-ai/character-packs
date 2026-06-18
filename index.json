@@ -12,6 +12,7 @@
       "track": "A",
       "tags": ["junior", "fast", "eager", "generalist"],
       "path": "packs/lilbro",
+      "avatar": "packs/lilbro/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": ["compile-knowledge", "notify-user"]

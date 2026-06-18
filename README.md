@@ -22,11 +22,12 @@ index.json                 # registry manifest (registryFormat:1) — array of p
 packs/<slug>/
   manifest.json            # pack manifest (packFormat:1) — config + skill/plugin refs, no secrets
   CLAUDE.md                # the persona / system prompt
+  avatar.png               # square character avatar (optional; shown in browse + set on import)
   card.md                  # human-readable preview card (optional)
 ```
 
 Each `index.json` entry: `slug`, `name`, `tagline`, `character`, `track`, `tags`,
-`path`, `packFormat`, `includesMemory`, `skills`.
+`path`, `avatar` (optional), `packFormat`, `includesMemory`, `skills`.
 
 ## Publish a pack
 
