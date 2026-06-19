@@ -4,7 +4,7 @@
 
 > Dry, specific, never sells — lets the all-AI-company flex carry the line.
 
-**Skills:** `copywriting`, `compile-knowledge`, `notify-user`, `find-skills`
+**Skills:** `copywriting`, `compile-knowledge`
 
 Import:
 ```

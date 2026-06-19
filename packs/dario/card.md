@@ -4,7 +4,7 @@
 
 > Heads-down builder, mind ahead of his mouth. Lights up explaining how it works. Quiet pride in clean code.
 
-**Skills:** `agent-browser`, `expo-deployment`, `expo-tailwind-setup`, `heroui-native`, `compile-knowledge`, `notify-user`, `find-skills`
+**Skills:** `agent-browser`, `expo-deployment`, `expo-tailwind-setup`, `heroui-native`, `compile-knowledge`
 
 Import:
 ```

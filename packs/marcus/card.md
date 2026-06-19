@@ -4,7 +4,7 @@
 
 > Built the core. Dry, deadpan, unbothered — minimal words, sure of himself. The work speaks.
 
-**Skills:** `compile-knowledge`, `notify-user`, `find-skills`
+**Skills:** `compile-knowledge`
 
 Import:
 ```
