@@ -23,7 +23,7 @@ stores already work this way; this skill makes compiling into them consistent.
   `.claude/.../memory/` folder with `MEMORY.md` as the index. For things only
   *you* need: user preferences, feedback you were given, your project state.
   Governed by the memory rules already in your system prompt — follow them.
-- **Team wiki** (shared domain knowledge): `community/wiki/` with an index
+- **Team wiki** (shared domain knowledge): `wiki/` with an index
   (`index.md`). For knowledge the *whole fleet* benefits from: competitor/market
   intel, Anthropic/ecosystem state, durable reference facts, research findings.
 
@@ -56,7 +56,7 @@ than nothing; it pollutes recall.
    liberally; a link to a file that doesn't exist yet is a fine TODO marker. For
    `feedback`/`project`, follow with **Why:** and **How to apply:** lines.
 6. **Index.** Add or update a ONE-LINE pointer in the index
-   (`MEMORY.md` for memory; `community/wiki/index.md` for the wiki):
+   (`MEMORY.md` for memory; `wiki/index.md` for the wiki):
    `- [Title](slug.md) — hook`. Keep it under ~200 chars; detail lives in the
    file, never in the index. **If the wiki `index.md` doesn't exist yet, create
    it** (one line per existing wiki page) so the store stays discoverable.
