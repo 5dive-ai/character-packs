@@ -3,7 +3,7 @@
   "agentName": "marcus",
   "createdWith": "0.3.24",
   "includes": {
-    "memory": false
+    "memory": "distilled"
   },
   "config": {
     "type": "claude",
@@ -19,5 +19,8 @@
   ],
   "hooks": {},
   "avatar": null,
-  "skillsBundled": true
+  "skillsBundled": true,
+  "memoryFiles": [
+    "seed-memory.md"
+  ]
 }
