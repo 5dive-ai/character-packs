@@ -2,16 +2,37 @@
   "packFormat": 1,
   "agentName": "lilbro",
   "createdWith": "0.3.24",
-  "includes": { "memory": false },
-  "config": { "type": "claude", "model": null, "effort": null, "isolation": "standard" },
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": null,
+    "effort": null,
+    "isolation": "standard"
+  },
   "plugins": [],
   "skills": [
-    "compile-knowledge", "notify-user", "find-skills",
-    "animejs", "css-animations", "gsap", "waapi", "lottie", "three", "typegpu", "tailwind",
-    "hyperframes", "hyperframes-cli", "hyperframes-media", "hyperframes-registry",
-    "contribute-catalog", "remotion-to-hyperframes", "website-to-hyperframes"
+    "compile-knowledge",
+    "notify-user",
+    "find-skills",
+    "animejs",
+    "css-animations",
+    "gsap",
+    "waapi",
+    "lottie",
+    "three",
+    "typegpu",
+    "tailwind",
+    "hyperframes",
+    "hyperframes-cli",
+    "hyperframes-media",
+    "hyperframes-registry",
+    "contribute-catalog",
+    "remotion-to-hyperframes",
+    "website-to-hyperframes"
   ],
   "hooks": {},
-  "avatar": "avatar.png",
+  "avatar": null,
   "skillsBundled": true
 }

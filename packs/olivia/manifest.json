@@ -1,0 +1,25 @@
+{
+  "packFormat": 1,
+  "agentName": "olivia",
+  "createdWith": "0.3.24",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": null,
+    "effort": null,
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "ceo",
+    "operator",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}

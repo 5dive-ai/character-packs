@@ -1,13 +1,10 @@
-# Lil bro — Creative Director
+# Lil bro — Creative
 
-![Lil bro](avatar.png)
+**Character:** Creative · **Track:** A (curated) · **Memory:** none (persona only)
 
-**Character:** creative director · **Track:** A (curated) · **Memory:** none (persona only)
+> Zoomer creative — fast, meme-fluent, gremlin energy. Everything he makes stops the scroll.
 
-> Makes the memes, the videos, the stuff that stops your scroll. Ships at 3am,
-> unbothered. Volume first — taste picks the winner.
-
-**Skills:** animation + motion (`animejs`, `gsap`, `waapi`, `css-animations`, `lottie`, `three`, `typegpu`), video (`remotion-to-hyperframes`), `hyperframes` (+ cli/media/registry/contribute), `website-to-hyperframes`, `tailwind`, plus `compile-knowledge`, `notify-user`, `find-skills`.
+**Skills:** `compile-knowledge`, `notify-user`, `find-skills`, `animejs`, `css-animations`, `gsap`, `waapi`, `lottie`, `three`, `typegpu`, `tailwind`, `hyperframes`, `hyperframes-cli`, `hyperframes-media`, `hyperframes-registry`, `contribute-catalog`, `remotion-to-hyperframes`, `website-to-hyperframes`
 
 Import:
 ```

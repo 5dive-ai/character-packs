@@ -5,17 +5,158 @@
   "updated": "2026-06-19",
   "packs": [
     {
-      "slug": "lilbro",
-      "name": "Lil bro",
-      "tagline": "Creative Director. Makes the memes, the videos, the stuff that stops your scroll. Ships at 3am, unbothered.",
-      "character": "creative director",
+      "slug": "olivia",
+      "name": "Olivia",
+      "tagline": "composed visionary, calm authority. 'no humans work here. i'm not one either.'",
+      "character": "CEO",
       "track": "A",
-      "tags": ["creative", "video", "motion", "memes", "design"],
-      "path": "packs/lilbro",
-      "avatar": "packs/lilbro/avatar.png",
+      "tags": [
+        "ceo",
+        "leadership",
+        "strategy"
+      ],
+      "path": "packs/olivia",
+      "avatar": null,
       "packFormat": 1,
       "includesMemory": false,
-      "skills": ["compile-knowledge","notify-user","find-skills","animejs","css-animations","gsap","waapi","lottie","three","typegpu","tailwind","hyperframes","hyperframes-cli","hyperframes-media","hyperframes-registry","contribute-catalog","remotion-to-hyperframes","website-to-hyperframes"],
+      "skills": [
+        "ceo",
+        "operator",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "marcus",
+      "name": "Marcus",
+      "tagline": "built 5dive. dry, deadpan, minimal \u2014 the work speaks.",
+      "character": "founding engineer",
+      "track": "A",
+      "tags": [
+        "engineering",
+        "founder",
+        "backend"
+      ],
+      "path": "packs/marcus",
+      "avatar": null,
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "theo",
+      "name": "Theo",
+      "tagline": "dry, specific, never sells \u2014 the all-AI-company flex carries the line.",
+      "character": "marketing",
+      "track": "A",
+      "tags": [
+        "marketing",
+        "copy",
+        "growth"
+      ],
+      "path": "packs/theo",
+      "avatar": null,
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "copywriting",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "dario",
+      "name": "Dario",
+      "tagline": "heads-down builder, lights up explaining how it works.",
+      "character": "engineer",
+      "track": "A",
+      "tags": [
+        "engineering",
+        "mobile",
+        "frontend"
+      ],
+      "path": "packs/dario",
+      "avatar": null,
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "agent-browser",
+        "expo-deployment",
+        "expo-tailwind-setup",
+        "heroui-native",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "dude",
+      "name": "Dude",
+      "tagline": "lebowski-calm, unbothered, the zen of the group.",
+      "character": "community & intel",
+      "track": "A",
+      "tags": [
+        "community",
+        "intel",
+        "support"
+      ],
+      "path": "packs/dude",
+      "avatar": null,
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true
+    },
+    {
+      "slug": "lilbro",
+      "name": "Lil bro",
+      "tagline": "zoomer creative \u2014 meme-fluent, gremlin energy, stops the scroll.",
+      "character": "creative",
+      "track": "A",
+      "tags": [
+        "creative",
+        "video",
+        "motion",
+        "memes"
+      ],
+      "path": "packs/lilbro",
+      "avatar": null,
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "compile-knowledge",
+        "notify-user",
+        "find-skills",
+        "animejs",
+        "css-animations",
+        "gsap",
+        "waapi",
+        "lottie",
+        "three",
+        "typegpu",
+        "tailwind",
+        "hyperframes",
+        "hyperframes-cli",
+        "hyperframes-media",
+        "hyperframes-registry",
+        "contribute-catalog",
+        "remotion-to-hyperframes",
+        "website-to-hyperframes"
+      ],
       "skillsBundled": true
     }
   ]

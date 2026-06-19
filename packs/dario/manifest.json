@@ -1,0 +1,27 @@
+{
+  "packFormat": 1,
+  "agentName": "dario",
+  "createdWith": "0.3.24",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": null,
+    "effort": null,
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "agent-browser",
+    "expo-deployment",
+    "expo-tailwind-setup",
+    "heroui-native",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
