@@ -45,7 +45,7 @@
       "path": "packs/marcus",
       "avatar": "packs/marcus/avatar.png",
       "packFormat": 1,
-      "includesMemory": false,
+      "includesMemory": true,
       "skills": [
         "compile-knowledge",
         "notify-user",
@@ -70,7 +70,7 @@
       "path": "packs/theo",
       "avatar": "packs/theo/avatar.png",
       "packFormat": 1,
-      "includesMemory": false,
+      "includesMemory": true,
       "skills": [
         "copywriting",
         "compile-knowledge",
@@ -96,7 +96,7 @@
       "path": "packs/dario",
       "avatar": "packs/dario/avatar.png",
       "packFormat": 1,
-      "includesMemory": false,
+      "includesMemory": true,
       "skills": [
         "agent-browser",
         "expo-deployment",
@@ -151,7 +151,7 @@
       "path": "packs/lilbro",
       "avatar": "packs/lilbro/avatar.png",
       "packFormat": 1,
-      "includesMemory": false,
+      "includesMemory": true,
       "skills": [
         "compile-knowledge",
         "notify-user",
