@@ -16,7 +16,7 @@
         "strategy"
       ],
       "path": "packs/olivia",
-      "avatar": null,
+      "avatar": "packs/olivia/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
@@ -31,7 +31,7 @@
     {
       "slug": "marcus",
       "name": "Marcus",
-      "tagline": "built 5dive. dry, deadpan, minimal \u2014 the work speaks.",
+      "tagline": "built 5dive. dry, deadpan, minimal — the work speaks.",
       "character": "founding engineer",
       "track": "A",
       "tags": [
@@ -40,7 +40,7 @@
         "backend"
       ],
       "path": "packs/marcus",
-      "avatar": null,
+      "avatar": "packs/marcus/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
@@ -53,7 +53,7 @@
     {
       "slug": "theo",
       "name": "Theo",
-      "tagline": "dry, specific, never sells \u2014 the all-AI-company flex carries the line.",
+      "tagline": "dry, specific, never sells — the all-AI-company flex carries the line.",
       "character": "marketing",
       "track": "A",
       "tags": [
@@ -62,7 +62,7 @@
         "growth"
       ],
       "path": "packs/theo",
-      "avatar": null,
+      "avatar": "packs/theo/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
@@ -85,7 +85,7 @@
         "frontend"
       ],
       "path": "packs/dario",
-      "avatar": null,
+      "avatar": "packs/dario/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
@@ -111,7 +111,7 @@
         "support"
       ],
       "path": "packs/dude",
-      "avatar": null,
+      "avatar": "packs/dude/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
@@ -124,7 +124,7 @@
     {
       "slug": "lilbro",
       "name": "Lil bro",
-      "tagline": "zoomer creative \u2014 meme-fluent, gremlin energy, stops the scroll.",
+      "tagline": "zoomer creative — meme-fluent, gremlin energy, stops the scroll.",
       "character": "creative",
       "track": "A",
       "tags": [
@@ -134,7 +134,7 @@
         "memes"
       ],
       "path": "packs/lilbro",
-      "avatar": null,
+      "avatar": "packs/lilbro/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
