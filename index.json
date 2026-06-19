@@ -26,7 +26,10 @@
         "notify-user",
         "find-skills"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "legendary",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh"
     },
     {
       "slug": "marcus",
@@ -48,7 +51,10 @@
         "notify-user",
         "find-skills"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "legendary",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh"
     },
     {
       "slug": "theo",
@@ -71,12 +77,15 @@
         "notify-user",
         "find-skills"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh"
     },
     {
       "slug": "dario",
       "name": "Dario",
-      "tagline": "heads-down builder, lights up explaining how it works.",
+      "tagline": "mobile builder — ships apps end-to-end with Expo + native UI. heads-down, lights up explaining how it works.",
       "character": "engineer",
       "track": "A",
       "tags": [
@@ -97,7 +106,10 @@
         "notify-user",
         "find-skills"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "high"
     },
     {
       "slug": "dude",
@@ -119,7 +131,10 @@
         "notify-user",
         "find-skills"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-sonnet-4-6",
+      "effort": "high"
     },
     {
       "slug": "lilbro",
@@ -157,7 +172,10 @@
         "remotion-to-hyperframes",
         "website-to-hyperframes"
       ],
-      "skillsBundled": true
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "claude-opus-4-8",
+      "effort": "high"
     }
   ]
 }
