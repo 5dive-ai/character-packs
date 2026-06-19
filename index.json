@@ -2,28 +2,20 @@
   "registryFormat": 1,
   "name": "5dive character packs",
   "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
-  "updated": "2026-06-18",
+  "updated": "2026-06-19",
   "packs": [
     {
       "slug": "lilbro",
       "name": "Lil bro",
-      "tagline": "Your eager junior teammate \u2014 grabs the grunt work, ships a rough draft fast, asks the dumb question.",
-      "character": "junior generalist",
+      "tagline": "Creative Director. Makes the memes, the videos, the stuff that stops your scroll. Ships at 3am, unbothered.",
+      "character": "creative director",
       "track": "A",
-      "tags": [
-        "junior",
-        "fast",
-        "eager",
-        "generalist"
-      ],
+      "tags": ["creative", "video", "motion", "memes", "design"],
       "path": "packs/lilbro",
       "avatar": "packs/lilbro/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
-      "skills": [
-        "compile-knowledge",
-        "notify-user"
-      ],
+      "skills": ["compile-knowledge","notify-user","find-skills","animejs","css-animations","gsap","waapi","lottie","three","typegpu","tailwind","hyperframes","hyperframes-cli","hyperframes-media","hyperframes-registry","contribute-catalog","remotion-to-hyperframes","website-to-hyperframes"],
       "skillsBundled": true
     }
   ]
