@@ -2,7 +2,7 @@
   "registryFormat": 1,
   "name": "5dive character packs",
   "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
-  "updated": "2026-06-19",
+  "updated": "2026-06-20",
   "packs": [
     {
       "slug": "olivia",
@@ -20,8 +20,6 @@
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
-        "ceo",
-        "operator",
         "compile-knowledge",
         "notify-user",
         "find-skills"
