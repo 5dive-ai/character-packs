@@ -20,6 +20,8 @@
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
+        "deep-research",
+        "pitch-deck",
         "compile-knowledge",
         "notify-user",
         "find-skills"
@@ -45,6 +47,9 @@
       "packFormat": 1,
       "includesMemory": true,
       "skills": [
+        "code-review",
+        "security-review",
+        "claude-api",
         "compile-knowledge",
         "notify-user",
         "find-skills"
@@ -71,6 +76,10 @@
       "includesMemory": true,
       "skills": [
         "copywriting",
+        "seo",
+        "paid-ads",
+        "analytics",
+        "social-content",
         "compile-knowledge",
         "notify-user",
         "find-skills"
@@ -100,6 +109,9 @@
         "expo-deployment",
         "expo-tailwind-setup",
         "heroui-native",
+        "nextjs-app",
+        "heroui-react",
+        "playwright-e2e",
         "compile-knowledge",
         "notify-user",
         "find-skills"
@@ -125,6 +137,8 @@
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
+        "community-engagement",
+        "support-reply",
         "compile-knowledge",
         "notify-user",
         "find-skills"
