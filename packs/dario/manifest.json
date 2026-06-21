@@ -17,6 +17,9 @@
     "expo-deployment",
     "expo-tailwind-setup",
     "heroui-native",
+    "nextjs-app",
+    "heroui-react",
+    "playwright-e2e",
     "compile-knowledge",
     "notify-user",
     "find-skills"
