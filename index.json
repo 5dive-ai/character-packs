@@ -188,7 +188,7 @@
         "over-engineering"
       ],
       "path": "packs/ward",
-      "avatar": null,
+      "avatar": "packs/ward/avatar.png",
       "packFormat": 1,
       "includesMemory": false,
       "skills": [
