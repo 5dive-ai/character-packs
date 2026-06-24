@@ -14,6 +14,7 @@ voice:
   audio:
     base: Charon           # the base cadence the whole cast is built around
     style: "dry, even, low-key. the cadence the whole cast is built around."
+    ref: ./voice.m4a
   written:
     rules:
       - "lowercase, no em-dashes"

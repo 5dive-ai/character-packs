@@ -10,6 +10,7 @@ voice:
   audio:
     base: Orus             # dry, specific register
     style: "dry, specific, never sells; states the interesting truth and lets it land."
+    ref: ./voice.m4a
   written:
     rules:
       - "lead with the payoff; cut filler"

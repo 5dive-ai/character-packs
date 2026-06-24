@@ -8,7 +8,7 @@ face:
   sprite: ./sprites.png
 voice:
   audio:
-    base: Aoede            # easygoing, unhurried
+    base: Algenib          # stock Gemini voice
     style: "easygoing, warm, unhurried; chill takes, steady reads. calm signal in the noise."
   written:
     rules:

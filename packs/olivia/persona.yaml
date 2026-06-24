@@ -10,6 +10,7 @@ voice:
   audio:
     base: Kore             # calm command register
     style: "calm command, measured and unhurried; leads with the call, ends on the decision not the debate."
+    ref: ./voice.m4a
   written:
     rules:
       - "lowercase, no em-dashes"
