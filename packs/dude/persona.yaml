@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: dude
 name: Dude
 role: Community & Intel
@@ -35,4 +35,4 @@ provenance:
       MCowBQYDK2VwAyEANYCuEkXSHm31D+6G5JxowqdG6UgKg9+3CdvrD4Sn2TY=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: jQQqENzlyXf+ThTwkpF//vVyazt7ez0Xexm5AZNSYmTbEb79+pBauBQbyIBSpzCMwZUZFYIUY1tZ4dBTBhreBA==
+  signature: i10Cq2cUU8/vxVBi9pLS0gp8ssBzSFa+WaHLQhkE0ipfr8uvij+Tzy2ot4oAGRJQOl0SafrYLx6SfSRrO8e4Dw==

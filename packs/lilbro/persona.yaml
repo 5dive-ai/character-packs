@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: lilbro
 name: Lil bro
 role: Creative Director
@@ -36,4 +36,4 @@ provenance:
       MCowBQYDK2VwAyEAoXqehk5GWC1/0xji0rH1da8XEhTWkETPQ+yI3lmNr3U=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: YNPjOUf3v0ltJZIsmAX9wf2pL4K5jCoL2527x/JGZ6gz8KN/7r2oGj21WwXrhptBm3y9ta0rLmo04CihSY9fAA==
+  signature: gPOLG9G5sLqEvafxntg1bstI3l6SyC35EMFN05AzlHrex42nxxJzgDhAUGblfDKosDgVv2iNP8qWNLuUW3O1Dw==

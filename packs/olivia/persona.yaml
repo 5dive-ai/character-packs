@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: olivia
 name: Olivia
 role: CEO
@@ -37,4 +37,4 @@ provenance:
       MCowBQYDK2VwAyEAZFkLvb+08u7HFisp4iYomGt/TXTPoO8mhd/Rtk+M4QU=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: lhuuskULgalA3YJvuXQ00WiRIf3huRV+qvevmqeMuajAnzcAs1WKVo39pZ5z8LNglzOw8H5Y3Q9gDjHhOaBTAg==
+  signature: 2T25HCbcQribKiSbaaLtZiGZ2bV2ytD0iPttpqIMSUyHStDeJS3GrCvYJ3yl8nEdeZzy1Ygfk8gZbI4wuysXDw==

@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: dario
 name: Dario
 role: Mobile / Frontend Engineer
@@ -36,4 +36,4 @@ provenance:
       MCowBQYDK2VwAyEAB56yT+Qp6M3xo3NHNHmIWdtp/I75UBQ6oiKbobvTI2c=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: xxCQNTnZ+mOrqAYrgBXuq6rTSklQ87osYRCO0Qq+lhzEmkqFv/Yog4WFctVrHl4TjSIxZzpC8q4CYo/yFxbbAQ==
+  signature: Gwn0oxQSZx8OYxjhUsvgcoz2TYpl6y9a4uqSi7KT9G737Vywjw48p7TaieO0S50T69CSb2xVUG9/cdHbQGSGDw==

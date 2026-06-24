@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: marcus
 name: Marcus
 role: CTO / Founding Engineer
@@ -42,4 +42,4 @@ provenance:
       MCowBQYDK2VwAyEAFkxypd7uAq0vkKCsnYwZOzsp+qK1FwZjo9Mc/eFtNsE=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: zUa3SkLQLO/ICiXDEBZ4gf/guh2GLieduzM6xcPWLz3bs9Rf11yCyqardNMSqOcSfaytPvVCK2WeHAUGfxiQCA==
+  signature: qcVepqBkKDxXELI6A/HZV92/t89TjMOXQTtUm8sGxUnnYz3TZ8+YMejiX2TBG8qyebqYjxqYutL+ZlALZuU6CQ==

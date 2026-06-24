@@ -1,4 +1,4 @@
-openagent: "0.1"
+openagent: "0.2"
 id: theo
 name: Theo
 role: Marketing
@@ -35,4 +35,4 @@ provenance:
       MCowBQYDK2VwAyEA9fG/UiL+nBKCsq1Vn1glsUGEA2iFAhU91HCr9m6MioY=
       -----END PUBLIC KEY-----
   signed_at: 2026-06-24T00:00:00Z
-  signature: 3wHrOGDgw0C/vlHEOlu0oRDgFVDbn2uHtu6L+wXwYZWwECCyOgRqmH2BQcNVU64BbSEE4Skv704XUdFFFi1VAw==
+  signature: mjArXrIEhlAzK11OSOKIEEkBi36WtaHca1kkYGYz+FHJ1ffwodoaNg2zZi4N6OqgPRYElOlLmFNTtZWhq0IaCA==
