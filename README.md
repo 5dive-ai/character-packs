@@ -22,8 +22,10 @@ from GitHub, the same way [5dive-ai/skills](https://github.com/5dive-ai/skills) 
 index.json                 # registry manifest (registryFormat:1) — array of pack entries
 packs/<slug>/
   manifest.json            # pack manifest (packFormat:1) — config + skill/plugin refs, no secrets
+  persona.yaml             # canonical OpenAgent identity (v0.1 spec) — drives the marketplace card + rarity
   CLAUDE.md                # the persona / system prompt
-  avatar.png               # square character avatar (optional; shown in browse + set on import)
+  avatar.png               # square character avatar — also persona.yaml face.ref
+  sprites.png              # sprite sheet for on-model card/reels (persona.yaml face.sprite)
   skills/<skill>/SKILL.md  # bundled skill bodies — pack is self-contained, no separate repo lookup
   card.md                  # human-readable preview card (optional)
   memory/MEMORY.md         # (optional) index for distilled seed memory — see Memory
@@ -33,6 +35,24 @@ packs/<slug>/
 Each `index.json` entry: `slug`, `name`, `tagline`, `character`, `track`, `tags`,
 `path`, `avatar` (optional), `packFormat`, `includesMemory`, `skills`, `skillsBundled`,
 and optional `rarity` / `model` / `effort` (shown on the marketplace card).
+
+## Rarity is computed, never hand-typed
+
+Every pack ships a conforming [OpenAgent `persona.yaml`](https://github.com/5dive-ai/openagent)
+as its **canonical identity file**. The `rarity` field in `index.json` is **derived** from that
+persona by [openagent's `computeTier()`](https://github.com/5dive-ai/openagent/blob/main/lib/tier.js) —
+so the catalog and the spec's deterministic ladder can never drift:
+
+```bash
+npm install                          # pulls @5dive/openagent
+npm run build:index                  # recompute every pack's rarity from persona.yaml
+npm run check:index                  # CI guard: fails if index.json rarity is stale
+```
+
+The file-derived tier tops out at **Legendary**. **Mythical** is *conferred* at runtime by the
+CLI's signature-verified registry layer (not farmable from the file), so it is never stored here.
+Want a higher rarity? Complete the persona — a named `voice.audio.base`, `voice.audio.style`,
+`face.anchor`/`face.sprite`, `links`, and `posts_about` each raise the tier.
 
 ## Memory — pre-trained packs
 

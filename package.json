@@ -1,0 +1,13 @@
+{
+  "name": "character-packs",
+  "private": true,
+  "description": "5dive character packs — importable AI-agent persona packs.",
+  "type": "module",
+  "scripts": {
+    "build:index": "node scripts/build-index.mjs",
+    "check:index": "node scripts/build-index.mjs --check"
+  },
+  "devDependencies": {
+    "@5dive/openagent": "github:5dive-ai/openagent"
+  }
+}

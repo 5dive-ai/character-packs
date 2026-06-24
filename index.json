@@ -85,7 +85,7 @@
         "find-skills"
       ],
       "skillsBundled": true,
-      "rarity": "epic",
+      "rarity": "legendary",
       "model": "claude-opus-4-8",
       "effort": "xhigh"
     },
@@ -117,7 +117,7 @@
         "find-skills"
       ],
       "skillsBundled": true,
-      "rarity": "rare",
+      "rarity": "legendary",
       "model": "claude-opus-4-8",
       "effort": "high"
     },
@@ -144,7 +144,7 @@
         "find-skills"
       ],
       "skillsBundled": true,
-      "rarity": "rare",
+      "rarity": "legendary",
       "model": "claude-sonnet-4-6",
       "effort": "high"
     },
@@ -185,7 +185,7 @@
         "website-to-hyperframes"
       ],
       "skillsBundled": true,
-      "rarity": "epic",
+      "rarity": "legendary",
       "model": "claude-opus-4-8",
       "effort": "high"
     }
