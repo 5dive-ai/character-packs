@@ -62,19 +62,32 @@ function rarityFor(slug) {
   if (pubkey) {
     try { did = didKeyFromPublicKey(pubkey); } catch (_) { did = null; }
   }
-  return { rarity: t.tier.toLowerCase(), completeness: t.completeness, level: t.level, did };
+  // Skills are CAPABILITY (a separate layer from identity). The pack manifest is
+  // the single source of truth — sync them into index.json so the catalog can't
+  // drift from what the pack actually bundles. Empty if no manifest/skills.
+  let skills = [];
+  const manifestPath = join(dir, "manifest.json");
+  if (existsSync(manifestPath)) {
+    try {
+      const m = JSON.parse(readFileSync(manifestPath, "utf8"));
+      if (Array.isArray(m.skills)) skills = m.skills.filter((s) => typeof s === "string");
+    } catch (_) { /* leave empty */ }
+  }
+  return { rarity: t.tier.toLowerCase(), completeness: t.completeness, level: t.level, did, skills };
 }
 
 const index = JSON.parse(readFileSync(INDEX_PATH, "utf8"));
 const rows = [];
 let changed = false;
 for (const pack of index.packs) {
-  const { rarity, completeness, level, did } = rarityFor(pack.slug);
+  const { rarity, completeness, level, did, skills } = rarityFor(pack.slug);
   rows.push({ slug: pack.slug, was: pack.rarity, now: rarity, completeness, level });
   if (pack.rarity !== rarity) changed = true;
   if (pack.did !== did) changed = true;
+  if (JSON.stringify(pack.skills || []) !== JSON.stringify(skills)) changed = true;
   pack.rarity = rarity;
   pack.did = did;
+  pack.skills = skills;
 }
 // Reflect the last build date so the catalog timestamp tracks regeneration.
 const everyDir = readdirSync(PACKS_DIR, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
