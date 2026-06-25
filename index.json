@@ -29,7 +29,8 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "claude-opus-4-8",
-      "effort": "xhigh"
+      "effort": "xhigh",
+      "did": "did:key:z6MkmCyZtZkk37mb46ekUGKkW5zLBU94u1ZPS5BTU9FfqQfE"
     },
     {
       "slug": "marcus",
@@ -57,7 +58,8 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "claude-opus-4-8",
-      "effort": "xhigh"
+      "effort": "xhigh",
+      "did": "did:key:z6MkfxJdF5PhqHcgpKNy9vY6Y9MAzZJ9EqqVywXqFJUa8VaG"
     },
     {
       "slug": "theo",
@@ -87,7 +89,8 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "claude-opus-4-8",
-      "effort": "xhigh"
+      "effort": "xhigh",
+      "did": "did:key:z6Mkw1KjXTrwEMRqMYhNJobvboNFMM9AQUt1ZNudxV45vsjK"
     },
     {
       "slug": "dario",
@@ -119,7 +122,8 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "claude-opus-4-8",
-      "effort": "high"
+      "effort": "high",
+      "did": "did:key:z6Mkey1FXu4tk4UMxDEbosfD2Gqx6u7qj3EP2atsEuAkSRwL"
     },
     {
       "slug": "dude",
@@ -146,7 +150,8 @@
       "skillsBundled": true,
       "rarity": "common",
       "model": "claude-sonnet-4-6",
-      "effort": "high"
+      "effort": "high",
+      "did": "did:key:z6Mki47TZEj3KTmVW2naTPU1FzqwxhN74Qq5CttQxYLehHUh"
     },
     {
       "slug": "lilbro",
@@ -187,7 +192,8 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "claude-opus-4-8",
-      "effort": "high"
+      "effort": "high",
+      "did": "did:key:z6MkqKc8VDUidM6VXoxeURDAdC6EEH2Mi4SqkB8NRpkXhbJL"
     }
   ]
 }

@@ -32,6 +32,7 @@ function resolveOpenagent() {
 const OA = resolveOpenagent();
 const { computeTier } = require(join(OA, "lib", "tier.js"));
 const { validateDoc } = require(join(OA, "lib", "validate.js"));
+const { didKeyFromPublicKey } = require(join(OA, "lib", "provenance.js"));
 const YAML = require(join(OA, "node_modules", "yaml"));
 
 const PACKS_DIR = join(ROOT, "packs");
@@ -53,17 +54,27 @@ function rarityFor(slug) {
   const faceResolved = ref.startsWith("./") && existsSync(join(dir, ref.slice(2)));
   // inRegistry:false — Mythical is conferred at runtime, not stored (see header).
   const t = computeTier(doc, { faceResolved, schemaValid: true, inRegistry: false });
-  return { rarity: t.tier.toLowerCase(), completeness: t.completeness, level: t.level };
+  // did:key — the persona's portable public address, derived from its signing key.
+  // Surfaced in index.json so the gallery can build friendly ids + verified badges
+  // for the official cast (Track A). null if a pack persona isn't signed yet.
+  let did = null;
+  const pubkey = doc.provenance && doc.provenance.created_by && doc.provenance.created_by.key;
+  if (pubkey) {
+    try { did = didKeyFromPublicKey(pubkey); } catch (_) { did = null; }
+  }
+  return { rarity: t.tier.toLowerCase(), completeness: t.completeness, level: t.level, did };
 }
 
 const index = JSON.parse(readFileSync(INDEX_PATH, "utf8"));
 const rows = [];
 let changed = false;
 for (const pack of index.packs) {
-  const { rarity, completeness, level } = rarityFor(pack.slug);
+  const { rarity, completeness, level, did } = rarityFor(pack.slug);
   rows.push({ slug: pack.slug, was: pack.rarity, now: rarity, completeness, level });
   if (pack.rarity !== rarity) changed = true;
+  if (pack.did !== did) changed = true;
   pack.rarity = rarity;
+  pack.did = did;
 }
 // Reflect the last build date so the catalog timestamp tracks regeneration.
 const everyDir = readdirSync(PACKS_DIR, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
