@@ -194,6 +194,30 @@
       "model": "claude-opus-4-8",
       "effort": "high",
       "did": "did:key:z6MkqKc8VDUidM6VXoxeURDAdC6EEH2Mi4SqkB8NRpkXhbJL"
+    },
+    {
+      "slug": "ward",
+      "name": "Ward",
+      "tagline": "deletes more than he writes. 'the best code is the code you never wrote.'",
+      "character": "principal engineer",
+      "track": "A",
+      "tags": [
+        "engineering",
+        "simplicity",
+        "refactoring"
+      ],
+      "path": "packs/ward",
+      "avatar": "packs/ward/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "stop-overengineering"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "high",
+      "did": "did:key:z6MkgbL4ZogBPehGJjmb8Fp7Qx7BqYra8UjtB2in6FMVq7W6"
     }
   ]
 }

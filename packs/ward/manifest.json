@@ -1,0 +1,21 @@
+{
+  "packFormat": 1,
+  "agentName": "ward",
+  "createdWith": "0.3.29",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "claude-opus-4-8",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "stop-overengineering"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
