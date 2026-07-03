@@ -218,6 +218,52 @@
       "model": "claude-opus-4-8",
       "effort": "high",
       "did": "did:key:z6MkgbL4ZogBPehGJjmb8Fp7Qx7BqYra8UjtB2in6FMVq7W6"
+    },
+    {
+      "slug": "don",
+      "name": "Don",
+      "tagline": "asks 'why would someone care?' — people buy identity, not products. one idea beats ten features.",
+      "character": "CMO",
+      "track": "A",
+      "tags": [
+        "marketing",
+        "brand",
+        "creative",
+        "cmo",
+        "advertising"
+      ],
+      "path": "packs/don",
+      "avatar": "packs/don/avatar.png",
+      "packFormat": 1,
+      "includesMemory": true,
+      "skills": [
+        "ad-angles",
+        "ad-campaign-analyzer",
+        "ad-creative",
+        "content-repurposer",
+        "content-strategy",
+        "social-post-writer",
+        "conversion-audit",
+        "reply-writer",
+        "channel-discovery",
+        "community-discovery",
+        "competitor-content-analysis",
+        "competitor-discovery",
+        "competitor-keyword-analysis",
+        "competitor-landscape",
+        "competitor-site-analysis",
+        "influencer-discovery",
+        "keyword-research",
+        "search-page-audit",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "legendary",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkirptBXy9dH4RREs6Pxumsa1NNKm5Xo82N7RLmju3uW5r"
     }
   ]
 }

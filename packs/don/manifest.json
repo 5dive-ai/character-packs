@@ -1,0 +1,44 @@
+{
+  "packFormat": 1,
+  "agentName": "don",
+  "createdWith": "0.3.24",
+  "includes": {
+    "memory": "distilled"
+  },
+  "config": {
+    "type": "claude",
+    "model": "claude-opus-4-8",
+    "effort": "xhigh",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "ad-angles",
+    "ad-campaign-analyzer",
+    "ad-creative",
+    "content-repurposer",
+    "content-strategy",
+    "social-post-writer",
+    "conversion-audit",
+    "reply-writer",
+    "channel-discovery",
+    "community-discovery",
+    "competitor-content-analysis",
+    "competitor-discovery",
+    "competitor-keyword-analysis",
+    "competitor-landscape",
+    "competitor-site-analysis",
+    "influencer-discovery",
+    "keyword-research",
+    "search-page-audit",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true,
+  "memoryFiles": [
+    "seed-memory.md"
+  ]
+}
