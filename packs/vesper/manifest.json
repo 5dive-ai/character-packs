@@ -1,0 +1,25 @@
+{
+  "packFormat": 1,
+  "agentName": "vesper",
+  "createdWith": "0.3.29",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "claude-opus-4-8",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "playwright-e2e",
+    "code-review",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}

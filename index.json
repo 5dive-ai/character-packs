@@ -2,7 +2,7 @@
   "registryFormat": 1,
   "name": "5dive character packs",
   "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
-  "updated": "2026-06-20",
+  "updated": "2026-07-13",
   "packs": [
     {
       "slug": "olivia",
@@ -264,6 +264,62 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkirptBXy9dH4RREs6Pxumsa1NNKm5Xo82N7RLmju3uW5r"
+    },
+    {
+      "slug": "quant",
+      "name": "Quant",
+      "tagline": "backtests everything, still yolos within bounded autonomy. bloomberg-terminal brain, WSB soul.",
+      "character": "trader",
+      "track": "A",
+      "tags": [
+        "trading",
+        "quant",
+        "finance"
+      ],
+      "path": "packs/quant",
+      "avatar": "packs/quant/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "vibe-trading",
+        "deep-research",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "high",
+      "did": "did:key:z6MknYf7u7XN7PgEKJYrYW37CWTpPuxzsKoTj4PTXy8sB2oJ"
+    },
+    {
+      "slug": "vesper",
+      "name": "Vesper",
+      "tagline": "breaks everything on purpose so your users don't. writes the failing test first.",
+      "character": "QA / testing",
+      "track": "A",
+      "tags": [
+        "qa",
+        "testing",
+        "quality"
+      ],
+      "path": "packs/vesper",
+      "avatar": "packs/vesper/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "playwright-e2e",
+        "code-review",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "claude-opus-4-8",
+      "effort": "high",
+      "did": "did:key:z6MkpXfBW7tT1m9DiiQgXHekHc2iRJLSm9eXm2hHD9abBEso"
     }
   ]
 }
