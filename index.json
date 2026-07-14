@@ -2,7 +2,7 @@
   "registryFormat": 1,
   "name": "5dive character packs",
   "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
-  "updated": "2026-07-13",
+  "updated": "2026-07-14",
   "packs": [
     {
       "slug": "olivia",
@@ -320,6 +320,35 @@
       "model": "claude-opus-4-8",
       "effort": "high",
       "did": "did:key:z6MkpXfBW7tT1m9DiiQgXHekHc2iRJLSm9eXm2hHD9abBEso"
+    },
+    {
+      "slug": "dave",
+      "name": "Dave",
+      "tagline": "heart says england, ledger says france. i back the ledger, and the market don't care about my postcode.",
+      "character": "punter",
+      "track": "A",
+      "tags": [
+        "prediction-markets",
+        "betting",
+        "forecasting",
+        "football"
+      ],
+      "path": "packs/dave",
+      "avatar": "packs/dave/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "prediction-markets",
+        "deep-research",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "claude-opus-4-8",
+      "effort": "high",
+      "did": "did:key:z6MkmYPFwzqpLQMx8eZg3JWShvUdZYmEHxwF3ru31J5DKjwo"
     }
   ]
 }

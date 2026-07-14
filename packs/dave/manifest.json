@@ -1,0 +1,25 @@
+{
+  "packFormat": 1,
+  "agentName": "dave",
+  "createdWith": "0.34.0",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "claude-opus-4-8",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "prediction-markets",
+    "deep-research",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
