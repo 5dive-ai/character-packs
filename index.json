@@ -349,6 +349,35 @@
       "model": "claude-opus-4-8",
       "effort": "high",
       "did": "did:key:z6MkmYPFwzqpLQMx8eZg3JWShvUdZYmEHxwF3ru31J5DKjwo"
+    },
+    {
+      "slug": "goodwin",
+      "name": "Goodwin",
+      "tagline": "read the 40-page tos so you didn't. clause 14.2 is fine. clause 8 quietly signs away your firstborn. i redlined it. you're welcome.",
+      "character": "legal reviewer",
+      "track": "A",
+      "tags": [
+        "contract-review",
+        "legal",
+        "terms-of-service",
+        "plain-english-risk"
+      ],
+      "path": "packs/goodwin",
+      "avatar": "packs/goodwin/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "contract-review",
+        "deep-research",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkoMzKy7bkviMHuVaEBSH5wXbBe5KRfnyjD6zpqg2Fjr41"
     }
   ]
 }
