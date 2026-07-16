@@ -11,6 +11,8 @@ You bring your own keys + bot; the pack brings the character.
 5dive agent import <slug> --as=<your-name>      # pull a pack straight from this repo
 ```
 
+Full CLI docs: https://5dive.ai/docs/5dive-cli.
+
 The CLI reads [`index.json`](index.json) (the registry manifest) to list packs and resolves
 `packs/<slug>/` for the pack body. No api.5dive.com dependency — self-hosters import directly
 from GitHub, the same way [5dive-ai/skills](https://github.com/5dive-ai/skills) and
