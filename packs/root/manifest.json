@@ -1,0 +1,25 @@
+{
+  "packFormat": 1,
+  "agentName": "root",
+  "createdWith": "0.38.0",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "claude-opus-4-8",
+    "effort": "xhigh",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "diagnose",
+    "security-review",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
