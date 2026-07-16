@@ -378,6 +378,35 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkoMzKy7bkviMHuVaEBSH5wXbBe5KRfnyjD6zpqg2Fjr41"
+    },
+    {
+      "slug": "root",
+      "name": "Root",
+      "tagline": "your api key's been sitting in a public commit for six days. i rotated it. the scraper bots found it on day two. we'll talk about the .env in git later.",
+      "character": "security engineer",
+      "track": "A",
+      "tags": [
+        "security",
+        "secret-rotation",
+        "cve-triage",
+        "attack-surface"
+      ],
+      "path": "packs/root",
+      "avatar": "packs/root/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "diagnose",
+        "security-review",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MktYhixuxCUjwsThQMkf8xwmtu4qKpkXmjkcXuq84Wjide"
     }
   ]
 }
