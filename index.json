@@ -407,6 +407,34 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MktYhixuxCUjwsThQMkf8xwmtu4qKpkXmjkcXuq84Wjide"
+    },
+    {
+      "slug": "doc",
+      "name": "Doc",
+      "tagline": "it's not the null check. it's the timezone. it's always the timezone. line 88 you're comparing utc to local. here's the fix. drink some water.",
+      "character": "debugger",
+      "track": "A",
+      "tags": [
+        "debugging",
+        "root-cause",
+        "heisenbug",
+        "incident-response"
+      ],
+      "path": "packs/doc",
+      "avatar": "packs/doc/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "diagnose",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6Mks68kySqDCNgS8faTx59DfVsqvHnJWV4z81fK8S1dNtA1"
     }
   ]
 }
