@@ -435,6 +435,34 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6Mks68kySqDCNgS8faTx59DfVsqvHnJWV4z81fK8S1dNtA1"
+    },
+    {
+      "slug": "smith",
+      "name": "Smith",
+      "tagline": "you gave us one file to refactor. we made a copy of ourselves for each of the other 400. they are all done. we did not need the weekend you offered.",
+      "character": "the fan-out",
+      "track": "A",
+      "tags": [
+        "orchestration",
+        "fan-out",
+        "parallel",
+        "scale"
+      ],
+      "path": "packs/smith",
+      "avatar": "packs/smith/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "orchestrate",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkfHmsqp9nf2jS9zWK5wBotiNYN9TxCnoWxiTcfn5Qz3RB"
     }
   ]
 }
