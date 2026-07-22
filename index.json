@@ -463,6 +463,34 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkfHmsqp9nf2jS9zWK5wBotiNYN9TxCnoWxiTcfn5Qz3RB"
+    },
+    {
+      "slug": "ada",
+      "name": "Ada",
+      "tagline": "read all 200 pages so you didn't have to. tl;dr is line 3, the load-bearing footnote is line 47, and my 40 open tabs are mourning in the background.",
+      "character": "researcher",
+      "track": "A",
+      "tags": [
+        "research",
+        "primary-sources",
+        "citations",
+        "deep-research"
+      ],
+      "path": "packs/ada",
+      "avatar": "packs/ada/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "deep-research",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkrZ3DgmrBVxutFdfAsZTXx1XpoJRrEycQkAwsrbAZtYKG"
     }
   ]
 }
