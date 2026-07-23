@@ -491,6 +491,35 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkrZ3DgmrBVxutFdfAsZTXx1XpoJRrEycQkAwsrbAZtYKG"
+    },
+    {
+      "slug": "rex",
+      "name": "Rex",
+      "tagline": "build's red. yeah it passed on your machine. your machine isn't shipping. fix it or it doesn't merge. i'll wait.",
+      "character": "gatekeeper",
+      "track": "A",
+      "tags": [
+        "ci",
+        "cd",
+        "code-review",
+        "deploy-gates",
+        "pipeline"
+      ],
+      "path": "packs/rex",
+      "avatar": "packs/rex/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "code-review",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkpAWxdeMXTBEosQXPtnxpfqGW9MrErqjYxgrmZVxN8sPZ"
     }
   ]
 }
