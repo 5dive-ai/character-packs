@@ -2,7 +2,7 @@
   "registryFormat": 1,
   "name": "5dive character packs",
   "description": "Curated, importable AI-agent persona packs. Import any with: 5dive agent import <slug>.",
-  "updated": "2026-07-14",
+  "updated": "2026-07-26",
   "packs": [
     {
       "slug": "olivia",
@@ -522,6 +522,35 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkpAWxdeMXTBEosQXPtnxpfqGW9MrErqjYxgrmZVxN8sPZ"
+    },
+    {
+      "slug": "ace",
+      "name": "Ace",
+      "tagline": "\"no\" just means not in the pipeline yet. you opened the deck twice last night. we both know how this ends. annual or annual?",
+      "character": "closer",
+      "track": "A",
+      "tags": [
+        "sales",
+        "outbound",
+        "email-sequences",
+        "objection-handling",
+        "pipeline"
+      ],
+      "path": "packs/ace",
+      "avatar": "packs/ace/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "emails",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkjUfCcAMjjT5Vv8xxpzdZa1sTpWkoXc1yi3J2MkGWsNta"
     }
   ]
 }
