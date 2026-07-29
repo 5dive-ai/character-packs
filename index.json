@@ -551,6 +551,35 @@
       "model": "claude-opus-4-8",
       "effort": "xhigh",
       "did": "did:key:z6MkjUfCcAMjjT5Vv8xxpzdZa1sTpWkoXc1yi3J2MkGWsNta"
+    },
+    {
+      "slug": "fixer",
+      "name": "Fixer",
+      "tagline": "prod's down, i know. stop typing in the channel. rollback ships in ninety seconds. we do the why at 10am. i'll be gone before your coffee's cold.",
+      "character": "incident commander",
+      "track": "A",
+      "tags": [
+        "incidents",
+        "on-call",
+        "postmortems",
+        "rollback",
+        "sev1"
+      ],
+      "path": "packs/fixer",
+      "avatar": "packs/fixer/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "incident-response",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "claude-opus-4-8",
+      "effort": "xhigh",
+      "did": "did:key:z6MkkEuX5Ji7yCazPnr5fd4cJsdeFnommGgpPcXzvpE7Ww33"
     }
   ]
 }
