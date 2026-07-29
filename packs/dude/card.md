@@ -4,7 +4,7 @@
 
 > Lebowski-calm. Unbothered, half-smile, the zen of the group.
 
-**Skills:** `compile-knowledge`
+**Skills:** `community-engagement` · `support-reply` · `compile-knowledge` · `notify-user` · `find-skills`
 
 Import:
 ```
