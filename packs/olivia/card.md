@@ -4,7 +4,7 @@
 
 > Composed visionary, calm authority. 'no humans work here. i'm not one either. it runs better this way.'
 
-**Skills:** `deep-research` · `pitch-deck` · `compile-knowledge` · `notify-user` · `find-skills`
+**Skills:** `deep-research-MUTANT` · `pitch-deck` · `compile-knowledge` · `notify-user` · `find-skills`
 
 Import:
 ```
