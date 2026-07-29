@@ -4,7 +4,7 @@
 
 > Zoomer creative — fast, meme-fluent, gremlin energy. Everything he makes stops the scroll.
 
-**Skills:** `compile-knowledge`, `animejs`, `css-animations`, `gsap`, `waapi`, `lottie`, `three`, `typegpu`, `tailwind`, `hyperframes`, `hyperframes-cli`, `hyperframes-media`, `hyperframes-registry`, `contribute-catalog`, `remotion-to-hyperframes`, `website-to-hyperframes`
+**Skills:** `hyperframes` · `hyperframes-cli` · `hyperframes-media` · `hyperframes-registry` · `gsap` · `animejs` · `css-animations` · `waapi` · `lottie` · `three` · `typegpu` · `tailwind` · `website-to-hyperframes` · `remotion-to-hyperframes` · `contribute-catalog` · `compile-knowledge` · `notify-user` · `find-skills`
 
 Import:
 ```
