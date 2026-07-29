@@ -1,0 +1,42 @@
+# A check that EXISTS is not a check that FIRES.
+#
+# `scripts/build-cards.mjs --check` was written with a RED anchor and a mutation test,
+# and then nothing ran it. That is the same shape as the defect it was written to
+# close: the `**Skills:**` convention held on author discipline across 19 packs until
+# it quietly did not, and 7 of the 8 oldest cards had already drifted before anyone
+# looked. A convention with no enforcer decays on exactly the packs nobody rechecks.
+#
+# Deliberately NO `npm install` in this job. build-cards.mjs imports only node:fs,
+# node:path and node:url — verified by deleting node_modules and re-running clean.
+# Dependency-free is what keeps this gate deterministic, so please do not add an
+# install step "for consistency": the repo's other check (`check:index`) pulls
+# @5dive/openagent from a git ref, and coupling a content assertion to a network
+# fetch is how a gate becomes flaky and then becomes ignored.
+#
+# `check:index` is deliberately NOT wired here. It is broken on a clean install —
+# scripts/build-index.mjs:36 does `require(join(OA, "node_modules", "yaml"))`,
+# reaching into the dependency's own nested node_modules, but npm hoists `yaml` to
+# the root, so that path never exists. Wiring it today would only paint main red.
+# Tracked separately rather than fixed here.
+
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  cards:
+    name: card Skills lines match their manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: build-cards --check
+        run: node scripts/build-cards.mjs --check
