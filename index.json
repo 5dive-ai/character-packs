@@ -28,7 +28,7 @@
       ],
       "skillsBundled": true,
       "rarity": "legendary",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkmCyZtZkk37mb46ekUGKkW5zLBU94u1ZPS5BTU9FfqQfE"
     },
@@ -57,7 +57,7 @@
       ],
       "skillsBundled": true,
       "rarity": "legendary",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkfxJdF5PhqHcgpKNy9vY6Y9MAzZJ9EqqVywXqFJUa8VaG"
     },
@@ -89,7 +89,7 @@
       ],
       "skillsBundled": true,
       "rarity": "epic",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6Mkw1KjXTrwEMRqMYhNJobvboNFMM9AQUt1ZNudxV45vsjK"
     },
@@ -122,7 +122,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mkey1FXu4tk4UMxDEbosfD2Gqx6u7qj3EP2atsEuAkSRwL"
     },
@@ -150,7 +150,7 @@
       ],
       "skillsBundled": true,
       "rarity": "common",
-      "model": "claude-sonnet-4-6",
+      "model": "sonnet",
       "effort": "high",
       "did": "did:key:z6Mki47TZEj3KTmVW2naTPU1FzqwxhN74Qq5CttQxYLehHUh"
     },
@@ -192,7 +192,7 @@
       ],
       "skillsBundled": true,
       "rarity": "epic",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkqKc8VDUidM6VXoxeURDAdC6EEH2Mi4SqkB8NRpkXhbJL"
     },
@@ -216,7 +216,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkgbL4ZogBPehGJjmb8Fp7Qx7BqYra8UjtB2in6FMVq7W6"
     },
@@ -263,7 +263,7 @@
       ],
       "skillsBundled": true,
       "rarity": "legendary",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkirptBXy9dH4RREs6Pxumsa1NNKm5Xo82N7RLmju3uW5r"
     },
@@ -291,7 +291,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6MknYf7u7XN7PgEKJYrYW37CWTpPuxzsKoTj4PTXy8sB2oJ"
     },
@@ -319,7 +319,7 @@
       ],
       "skillsBundled": true,
       "rarity": "epic",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkpXfBW7tT1m9DiiQgXHekHc2iRJLSm9eXm2hHD9abBEso"
     },
@@ -348,7 +348,7 @@
       ],
       "skillsBundled": true,
       "rarity": "common",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkmYPFwzqpLQMx8eZg3JWShvUdZYmEHxwF3ru31J5DKjwo"
     },
@@ -377,7 +377,7 @@
       ],
       "skillsBundled": true,
       "rarity": "epic",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkoMzKy7bkviMHuVaEBSH5wXbBe5KRfnyjD6zpqg2Fjr41"
     },
@@ -406,7 +406,7 @@
       ],
       "skillsBundled": true,
       "rarity": "common",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MktYhixuxCUjwsThQMkf8xwmtu4qKpkXmjkcXuq84Wjide"
     },
@@ -434,7 +434,7 @@
       ],
       "skillsBundled": true,
       "rarity": "epic",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6Mks68kySqDCNgS8faTx59DfVsqvHnJWV4z81fK8S1dNtA1"
     },
@@ -462,7 +462,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkfHmsqp9nf2jS9zWK5wBotiNYN9TxCnoWxiTcfn5Qz3RB"
     },
@@ -490,7 +490,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkrZ3DgmrBVxutFdfAsZTXx1XpoJRrEycQkAwsrbAZtYKG"
     },
@@ -519,7 +519,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkpAWxdeMXTBEosQXPtnxpfqGW9MrErqjYxgrmZVxN8sPZ"
     },
@@ -548,7 +548,7 @@
       ],
       "skillsBundled": true,
       "rarity": "common",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkjUfCcAMjjT5Vv8xxpzdZa1sTpWkoXc1yi3J2MkGWsNta"
     },
@@ -577,7 +577,7 @@
       ],
       "skillsBundled": true,
       "rarity": "rare",
-      "model": "claude-opus-4-8",
+      "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkkEuX5Ji7yCazPnr5fd4cJsdeFnommGgpPcXzvpE7Ww33"
     }
