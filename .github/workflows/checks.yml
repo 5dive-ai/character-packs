@@ -40,3 +40,18 @@ jobs:
           node-version: '22'
       - name: build-cards --check
         run: node scripts/build-cards.mjs --check
+
+  skills:
+    name: every manifest hero skill is actually bundled
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # Also dependency-free (node:fs/path/url/os only) — same reasoning as the
+      # cards job above, no install step.
+      - name: check-skills audit
+        run: node scripts/check-skills.mjs
+      - name: check-skills unit tests
+        run: bash scripts/test-check-skills.sh

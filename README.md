@@ -104,6 +104,40 @@ Publishing is a **pull request with a mandatory human review gate** — never au
 **Hard rules:** no `.env`, tokens, SSH keys, `.credentials.json`, or operational/customer memory.
 The export tripwire + allowlist already enforce this; review is the second line.
 
+## A hero skill must be bundled, never substituted
+
+Every pack leads with one **hero skill** — the thing that makes it not a re-skin of
+another pack. `manifest.json`'s `skills[0]` is the hero; the rest are secondaries.
+
+Assembly used to fail silently here. When a curated hero had no bundlable source dir
+on the build host it was quietly left out, the manifest was written without it, and
+the pack shipped carrying something else. Nothing caught it: the manifest is the only
+source of truth for `skills` (see `build-index.mjs`), so rewriting the manifest to
+match the substitution made the index, the card, the QR and the PR all agree with each
+other. `rex` shipped without its curated `verify` (PR #10) and `ace` without
+`cold-email` (PR #12) exactly this way.
+
+Two checks close it, one on each side of the manifest write:
+
+```bash
+npm run preflight:hero -- <slug> <hero-skill>   # BEFORE assembling
+npm run check:skills                            # audit every shipped pack (also in CI)
+```
+
+`preflight:hero` is the one that matters, because it runs while the curated hero is
+still known — once the manifest is written the substitution is indistinguishable from
+an honest pack. It resolves the skill against **durable** source roots only
+(`HERO_SOURCE_ROOTS` overrides them) and refuses by slug + skill name if there is
+none. A `/tmp` path, a `.tmp` plugin cache and a copy vendored under `packs/` are all
+excluded: they answer "does a dir exist right now", not "will this still be here at
+pack time", and the vendored case is circular — that copy is only there because some
+pack already shipped it.
+
+If the hero will not resolve, **author or stage the skill** (creative pre-stages under
+`openagent-card/skills/`). Do not substitute the nearest installed equivalent, and do
+not drop it — a missing secondary is fine to drop with a warning, a missing hero is a
+ship-blocker.
+
 ## Tracks
 
 - **Track A** — curated official cast (maintained by 5dive).
