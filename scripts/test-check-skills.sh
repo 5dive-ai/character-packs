@@ -91,6 +91,52 @@ mkskill "$FIX/staged/ghost-c"
 rc=$(run "$FIX/staged" --hero charlie ghost-c)
 check "LIVENESS same skill from a durable root -> rc 0" "$rc" 0
 
+echo "role centrality (warn only, never blocks)"
+# Shipped cast for these arms: 'lead-x' leads pack one and is CARRIED by pack two,
+# which leads with its own 'lead-y'. That split is what separates the two columns.
+printf '{"packs":[{"slug":"one","skills":["lead-x","sec-b"]},{"slug":"two","skills":["lead-y","lead-x"]}]}\n' > "$FIX/index.json"
+mkskill "$FIX/staged/lead-x"; mkskill "$FIX/staged/lead-y"; mkskill "$FIX/staged/compile-knowledge"
+
+rc=$(run "$FIX/staged" --hero three lead-x)
+check "collision: still exits 0 (warn, never fail)" "$rc" 0
+has   "collision: warns"                 "$(cat "$FIX/err")" "hero collision"
+has   "collision: names the leader"      "$(cat "$FIX/err")" "already LEADS: one"
+has   "collision: carried column is separate" "$(cat "$FIX/err")" "carried as a SECONDARY by: two"
+hasnt "collision: does NOT list a carrier as a leader" "$(cat "$FIX/err")" "LEADS: one, two"
+has   "collision: asks role centrality"  "$(cat "$FIX/err")" "role centrality"
+has   "collision: still resolves"        "$(cat "$FIX/out")" "ok:"
+
+# creative's explicit negative, and the whole point of splitting the columns: a
+# candidate hero that is only CARRIED elsewhere, never LED, must stay silent.
+# (This is the vesper case — leads playwright-e2e, which nobody leads, while
+# carrying code-review, which two packs lead. Only the hero slot is tested.)
+# 'sec-b' is a secondary of pack one and the hero of nobody. Without this arm the
+# collision arm would pass an implementation that warns on any repeat anywhere.
+mkskill "$FIX/staged/sec-b"
+rc=$(run "$FIX/staged" --hero three sec-b)
+check "SILENT carried-but-never-led -> rc 0" "$rc" 0
+hasnt "SILENT: no collision warning for a carried-elsewhere skill" "$(cat "$FIX/err")" "hero collision"
+
+# A pack must not collide with itself on a re-run.
+rc=$(run "$FIX/staged" --hero one lead-x)
+check "SELF: re-running the owning slug -> rc 0" "$rc" 0
+hasnt "SELF: does not warn against itself" "$(cat "$FIX/err")" "hero collision"
+
+rc=$(run "$FIX/staged" --hero three compile-knowledge)
+check "generic hero: exits 0" "$rc" 0
+has   "generic hero: warns with its OWN reason" "$(cat "$FIX/err")" "generic hero"
+hasnt "generic hero: not reported as a collision" "$(cat "$FIX/err")" "hero collision"
+
+# Audit runs the generic fence but NOT the collision one — collision would fire on
+# six shipped packs every CI run. lead-x leads 'one' and is carried by 'two'.
+mkdir -p "$FIX/packs/gen" && mkskill "$FIX/packs/gen/skills/compile-knowledge"
+printf '{"skills":["compile-knowledge"]}\n' > "$FIX/packs/gen/manifest.json"
+printf '{"packs":[{"slug":"alpha","skills":["hero-a","sec-b"]},{"slug":"gen","skills":["compile-knowledge"]}]}\n' > "$FIX/index.json"
+rc=$(run "$FIX/staged")
+check "audit: generic hero warns, does not fail" "$rc" 0
+has   "audit: names the generic leader" "$(cat "$FIX/err")" "gen: leads with the generic"
+hasnt "audit: no collision noise in CI"  "$(cat "$FIX/err")" "hero collision"
+
 echo
 printf '%d passed, %d failed\n' "$pass" "$fail"
 [ "$fail" -eq 0 ]

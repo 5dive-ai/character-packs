@@ -103,6 +103,52 @@ function manifestSkills(slug) {
   return Array.isArray(m.skills) ? m.skills.filter((s) => typeof s === "string") : [];
 }
 
+// ------------------------------------------------------- role-centrality
+
+// Skills every pack carries. A generic in skills[0] leaves a pack with no
+// distinguishing capability at all — strictly worse than a duplicate hero,
+// which at least names a role. lilbro led with compile-knowledge until 30ed0a9.
+const GENERICS = ["compile-knowledge", "notify-user", "find-skills"];
+
+function shippedPacks() {
+  if (!existsSync(INDEX_PATH)) return [];
+  const idx = JSON.parse(readFileSync(INDEX_PATH, "utf8"));
+  return (idx.packs || []).map((p) => ({ slug: p.slug, skills: p.skills || [] }));
+}
+
+// WARN, never fail. Uniqueness is deliberately NOT the bar: a hard failure here
+// would retroactively have blocked ada and doc, both of which shipped fine. The
+// question a repeated hero raises is role centrality — does this slug's role
+// collapse into an existing pack? — and that needs a human read, so the only
+// correct output is a flag. Leading with another pack's hero makes a re-skin;
+// CARRYING it as a secondary is normal and stays silent (vesper carries
+// code-review and leads playwright-e2e — that must not warn).
+function roleWarnings(slug, skill) {
+  const out = [];
+  if (GENERICS.includes(skill)) {
+    out.push(
+      `generic hero — '${skill}' is a generic that every pack carries, so leading with it\n` +
+        `  leaves '${slug}' with no distinguishing capability. Strictly worse than a collision:\n` +
+        `  a duplicate hero at least names a role. Pick or author a role-specific hero.`
+    );
+  }
+  const packs = shippedPacks().filter((p) => p.slug !== slug);
+  // led-by and carried-by are reported as SEPARATE columns on purpose. Collapsing
+  // them inflates every number and turns the warning into noise.
+  const ledBy = packs.filter((p) => p.skills[0] === skill).map((p) => p.slug);
+  const carriedBy = packs.filter((p) => p.skills[0] !== skill && p.skills.includes(skill)).map((p) => p.slug);
+  if (ledBy.length) {
+    out.push(
+      `hero collision — '${skill}' already LEADS: ${ledBy.join(", ")}\n` +
+        (carriedBy.length ? `  (separately, carried as a SECONDARY by: ${carriedBy.join(", ")})\n` : "") +
+        `  Not a blocker. The question is role centrality, not the count: does '${slug}'s role\n` +
+        `  collapse into one of the packs above? If it does, this is a re-skin — pick or author\n` +
+        `  a hero that names what only '${slug}' does.`
+    );
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- preflight
 
 function preflight(slug, skill) {
@@ -118,6 +164,7 @@ function preflight(slug, skill) {
     );
     process.exit(1);
   }
+  for (const w of roleWarnings(slug, skill)) console.warn(`warning: ${w}`);
   console.log(`ok: hero '${skill}' for pack '${slug}' resolves to ${src}`);
   process.exit(0);
 }
@@ -137,6 +184,15 @@ function audit() {
     if (claimed === null) {
       heroFailures.push(`${slug}: no manifest.json`);
       continue;
+    }
+    // Generic-in-skills[0] is checked here as a standing regression fence; it is
+    // silent on the current cast (lilbro was the last instance, fixed in 30ed0a9).
+    // The COLLISION check is deliberately NOT run in audit: code-review,
+    // deep-research and diagnose are each the hero of two shipped packs, so it
+    // would fire on six packs every CI run and be tuned out inside a week. That
+    // question belongs at preflight, once, while the choice is still open.
+    if (GENERICS.includes(claimed[0])) {
+      warnings.push(`${slug}: leads with the generic '${claimed[0]}' — no distinguishing capability`);
     }
     const bundled = new Set(bundledSkills(slug));
     claimed.forEach((skill, i) => {

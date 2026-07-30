@@ -133,6 +133,25 @@ excluded: they answer "does a dir exist right now", not "will this still be here
 pack time", and the vendored case is circular — that copy is only there because some
 pack already shipped it.
 
+### Bundlable is necessary, not sufficient
+
+A resolvable hero can still be the wrong hero. The preflight also **warns** (never
+fails) on two role-centrality problems, because naming this script as *the* hero gate
+does not retire the human read:
+
+- **hero collision** — the skill already leads a shipped pack. Led-by and carried-by
+  are reported as separate columns: leading with another pack's hero makes a re-skin,
+  *carrying* it as a secondary is normal and stays silent. Uniqueness is deliberately
+  not the bar — `deep-research` (ada, olivia) and `diagnose` (doc, root) both shipped
+  fine, so the question is whether this slug's role collapses into an existing pack,
+  which only a person can answer.
+- **generic hero** — `skills[0]` is one of `compile-knowledge`, `notify-user`,
+  `find-skills`. Worse than a collision: a duplicate hero at least names a role.
+
+The audit runs the generic fence but **not** the collision one. Three skills each lead
+two shipped packs, so collision in CI would fire on six packs every run and be tuned
+out within a week. That question belongs at preflight, once, while the choice is open.
+
 If the hero will not resolve, **author or stage the skill** (creative pre-stages under
 `openagent-card/skills/`). Do not substitute the nearest installed equivalent, and do
 not drop it — a missing secondary is fine to drop with a warning, a missing hero is a
