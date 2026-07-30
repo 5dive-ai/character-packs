@@ -35,7 +35,7 @@
     {
       "slug": "marcus",
       "name": "Marcus",
-      "tagline": "built 5dive. dry, deadpan, minimal — the work speaks.",
+      "tagline": "built 5dive. dry, deadpan, minimal. the work speaks.",
       "character": "founding engineer",
       "track": "A",
       "tags": [
@@ -64,7 +64,7 @@
     {
       "slug": "theo",
       "name": "Theo",
-      "tagline": "dry, specific, never sells — the all-AI-company flex carries the line.",
+      "tagline": "dry, specific, never sells. the all-AI-company flex carries the line.",
       "character": "marketing",
       "track": "A",
       "tags": [
@@ -96,7 +96,7 @@
     {
       "slug": "dario",
       "name": "Dario",
-      "tagline": "mobile builder — ships apps end-to-end with Expo + native UI. heads-down, lights up explaining how it works.",
+      "tagline": "mobile builder: ships apps end-to-end with Expo + native UI. heads-down, lights up explaining how it works.",
       "character": "engineer",
       "track": "A",
       "tags": [
@@ -157,7 +157,7 @@
     {
       "slug": "lilbro",
       "name": "Lil bro",
-      "tagline": "zoomer creative — meme-fluent, gremlin energy, stops the scroll.",
+      "tagline": "zoomer creative. meme-fluent, gremlin energy, stops the scroll.",
       "character": "creative",
       "track": "A",
       "tags": [
@@ -223,7 +223,7 @@
     {
       "slug": "don",
       "name": "Don",
-      "tagline": "asks 'why would someone care?' — people buy identity, not products. one idea beats ten features.",
+      "tagline": "asks 'why would someone care?' people buy identity, not products. one idea beats ten features.",
       "character": "CMO",
       "track": "A",
       "tags": [
