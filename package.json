@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "build:index": "node scripts/build-index.mjs",
-    "check:index": "node scripts/build-index.mjs --check"
+    "check:index": "node scripts/build-index.mjs --check",
+    "check:skills": "node scripts/check-skills.mjs",
+    "preflight:hero": "node scripts/check-skills.mjs --hero",
+    "test:skills": "bash scripts/test-check-skills.sh"
   },
   "devDependencies": {
     "@5dive/openagent": "github:5dive-ai/openagent"
