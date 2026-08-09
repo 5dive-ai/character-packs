@@ -224,6 +224,8 @@ mkskill "$FIX/staged/arm-a-hero"
 rc=$(run "$FIX/staged" --hero nine arm-a-hero)
 check "depth GREEN Arm A alone -> rc 0" "$rc" 0
 hasnt "depth GREEN Arm A: no REFUSED"   "$(cat "$FIX/err")" "REFUSED"
+has   "depth GREEN Arm A: ok line reports arm A"  "$(cat "$FIX/out")" "[depth: Arm A]"
+hasnt "depth GREEN Arm A: does not also claim B"  "$(cat "$FIX/out")" "also B"
 
 # 3. GREEN — Arm B alone (Worked example + fence, no references/). Needs its
 # own positive test or nothing proves Arm B fires at all.
@@ -232,6 +234,18 @@ printf -- '---\nname: arm-b-hero\n---\nfixture\n\n## Worked example\n\n```\nstep
 rc=$(run "$FIX/staged" --hero nine arm-b-hero)
 check "depth GREEN Arm B alone -> rc 0" "$rc" 0
 hasnt "depth GREEN Arm B: no REFUSED"   "$(cat "$FIX/err")" "REFUSED"
+has   "depth GREEN Arm B: ok line reports arm B"  "$(cat "$FIX/out")" "[depth: Arm B]"
+
+# 3b. GREEN — BOTH arms (references/ AND a Worked example + fence). Arm
+# reporting exists precisely so a single winning arm is never confused with
+# both holding (MARKETING SECTION 1 / main's rejection on DIVE-2859 iteration
+# 1: armState() collapsed A and B into one 'pass' and the ok: line was
+# arm-silent). This is the test that proves both are reported when both hold.
+mkskill "$FIX/staged/both-arms-hero"
+printf -- '\n## Worked example\n\n```\nstep 1\n```\n' >> "$FIX/staged/both-arms-hero/SKILL.md"
+rc=$(run "$FIX/staged" --hero nine both-arms-hero)
+check "depth GREEN both arms -> rc 0" "$rc" 0
+has   "depth GREEN both arms: ok line reports 'A, also B'" "$(cat "$FIX/out")" "[depth: Arm A, also B]"
 
 # 4. RED — the heading alone is not the arm; a fenced block must follow it, or
 # the heading becomes a magic word that a 60-second stub can paste in.

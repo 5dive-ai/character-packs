@@ -201,11 +201,34 @@ function armBPasses(skillText) {
 // end-to-end trace of the judgement the skill makes. A role has one, the
 // other, or both; neither is a fallback for the other (see
 // community/wiki/hero-skill-sourcing.md, DIVE-2859 arm-reporting addendum).
+//
+// Returns which arms passed, not just a pass/thin verdict: a hero that clears
+// both arms and one that scrapes by on a single arm are collapsed into the
+// same "pass" by callers that only check armA || armB, which is exactly the
+// gap main's review caught (arm-silent 'ok:' line). Report both so a future
+// batch that comes back predominantly Arm-B-only with minimal fences is
+// visible — that pattern is the detector for the Arm-B gaming residual
+// (MARKETING SECTION 2), and it only works if the arms are actually printed.
 function armState(src) {
   const armA = hasFileRecursive(join(src, "references"));
   const skillPath = join(src, "SKILL.md");
   const armB = existsSync(skillPath) && armBPasses(readFileSync(skillPath, "utf8"));
-  return armA || armB ? "pass" : "thin";
+  return { armA, armB };
+}
+
+function armsPass(arms) {
+  return arms.armA || arms.armB;
+}
+
+// "A, also B" when both hold — a single winning arm must never be reported as
+// if it were the only one that could have, per MARKETING SECTION 1: "a single
+// winning arm destroys the exact signal the arm-reporting requirement was
+// built to collect."
+function armLabel(arms) {
+  const letters = [];
+  if (arms.armA) letters.push("A");
+  if (arms.armB) letters.push("B");
+  return letters.join(", also ");
 }
 
 // DEPTH BAR GRANDFATHER LIST — DIVE-2859, 2026-08-06. Starting count: 15 of 15
@@ -262,7 +285,8 @@ function vendoredStatus(src) {
 // as still owing its debt, which is exactly the number the bar exists to make
 // visible.
 function depthMerit(src) {
-  if (armState(src) === "pass") return { state: "pass" };
+  const arms = armState(src);
+  if (armsPass(arms)) return { state: "pass", arms };
   const vendored = vendoredStatus(src);
   if (vendored) return vendored.ok ? { state: "vendored" } : { state: "thin", detail: vendored.reason };
   return { state: "thin" };
@@ -520,8 +544,17 @@ function preflight(slug, skill) {
     process.exit(1);
   }
 
+  // Arm reporting (DIVE-2859 addendum): the ok: line must say which arm(s) a
+  // hero cleared, not just that it cleared depth at all — a hand-written
+  // batch report cannot watch every future batch, only this line can.
+  const depthNote =
+    depth.state === "pass" ? ` [depth: Arm ${armLabel(depth.arms)}]`
+    : depth.state === "vendored" ? " [depth: vendored]"
+    : depth.state === "grandfathered" ? " [depth: grandfathered]"
+    : "";
+
   for (const w of roleWarnings(slug, skill)) console.warn(`warning: ${w}`);
-  console.log(`ok: hero '${skill}' for pack '${slug}' resolves to ${src}`);
+  console.log(`ok: hero '${skill}' for pack '${slug}' resolves to ${src}${depthNote}`);
   process.exit(0);
 }
 
