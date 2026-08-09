@@ -13,9 +13,16 @@
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPT="$HERE/check-skills.mjs"
 FIX="${HOME}/.cache/dive2409-fixture.$$"
+# Outside $HOME on purpose: a PROVENANCE.md's declared upstream path is
+# scanned by the DIVE-2866 internal-marker check like any other fixture
+# content, and $FIX sits under /home/<agent>/... which would itself match the
+# internal-filesystem-path marker. The vendored-hero fixtures below reference
+# this path from PROVENANCE.md text, so it has to live somewhere that marker
+# can't see.
+UPSTREAM="/tmp/dive2866-upstream-fixture.$$"
 pass=0; fail=0
 
-cleanup() { rm -rf "$FIX"; }
+cleanup() { rm -rf "$FIX" "$UPSTREAM"; }
 trap cleanup EXIT
 
 ok()   { printf '  PASS  %s\n' "$1"; pass=$((pass+1)); }
@@ -245,33 +252,33 @@ hasnt "depth GREEN grandfathered: no REFUSED" "$(cat "$FIX/err")" "REFUSED"
 has   "depth GREEN grandfathered: prints remaining count" "$(cat "$FIX/out")" "note: depth-bar grandfathered 1/15 remaining"
 
 echo "hero depth bar: VENDORED (byte-identical to a declared upstream + LICENSE travels)"
-mkdir -p "$FIX/upstream/vendored-ok"
-printf -- '---\nname: vendored-ok\n---\nupstream content, unmodified\n' > "$FIX/upstream/vendored-ok/SKILL.md"
+mkdir -p "$UPSTREAM/vendored-ok"
+printf -- '---\nname: vendored-ok\n---\nupstream content, unmodified\n' > "$UPSTREAM/vendored-ok/SKILL.md"
 mkdir -p "$FIX/staged/vendored-ok"
-cp "$FIX/upstream/vendored-ok/SKILL.md" "$FIX/staged/vendored-ok/SKILL.md"
+cp "$UPSTREAM/vendored-ok/SKILL.md" "$FIX/staged/vendored-ok/SKILL.md"
 printf 'MIT, Copyright (c) 2026 Upstream Author\n' > "$FIX/staged/vendored-ok/LICENSE"
-printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$FIX/upstream/vendored-ok" > "$FIX/staged/vendored-ok/PROVENANCE.md"
+printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$UPSTREAM/vendored-ok" > "$FIX/staged/vendored-ok/PROVENANCE.md"
 rc=$(run "$FIX/staged" --hero nine vendored-ok)
 check "depth GREEN vendored (byte-identical + LICENSE) -> rc 0" "$rc" 0
 hasnt "depth GREEN vendored: no REFUSED" "$(cat "$FIX/err")" "REFUSED"
 
 # RED — edited past the declared upstream: this is now a fork, so the arms
 # apply like anything else instead of a one-line exemption staying valid forever.
-mkdir -p "$FIX/upstream/vendored-fork" "$FIX/staged/vendored-fork"
-printf -- '---\nname: vendored-fork\n---\nupstream content\n' > "$FIX/upstream/vendored-fork/SKILL.md"
+mkdir -p "$UPSTREAM/vendored-fork" "$FIX/staged/vendored-fork"
+printf -- '---\nname: vendored-fork\n---\nupstream content\n' > "$UPSTREAM/vendored-fork/SKILL.md"
 printf -- '---\nname: vendored-fork\n---\nEDITED locally, no longer matches upstream\n' > "$FIX/staged/vendored-fork/SKILL.md"
 printf 'MIT\n' > "$FIX/staged/vendored-fork/LICENSE"
-printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$FIX/upstream/vendored-fork" > "$FIX/staged/vendored-fork/PROVENANCE.md"
+printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$UPSTREAM/vendored-fork" > "$FIX/staged/vendored-fork/PROVENANCE.md"
 rc=$(run "$FIX/staged" --hero nine vendored-fork)
 check "depth RED vendored fork -> rc 1" "$rc" 1
 has   "depth RED vendored fork: names the reason" "$(cat "$FIX/err")" "no longer byte-identical"
 
 # RED — byte-identical but the LICENSE never travelled with the staged copy.
 # A pack is a DISTRIBUTION; the notice has to travel with it.
-mkdir -p "$FIX/upstream/vendored-nolicense" "$FIX/staged/vendored-nolicense"
-printf -- '---\nname: vendored-nolicense\n---\nupstream content\n' > "$FIX/upstream/vendored-nolicense/SKILL.md"
-cp "$FIX/upstream/vendored-nolicense/SKILL.md" "$FIX/staged/vendored-nolicense/SKILL.md"
-printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$FIX/upstream/vendored-nolicense" > "$FIX/staged/vendored-nolicense/PROVENANCE.md"
+mkdir -p "$UPSTREAM/vendored-nolicense" "$FIX/staged/vendored-nolicense"
+printf -- '---\nname: vendored-nolicense\n---\nupstream content\n' > "$UPSTREAM/vendored-nolicense/SKILL.md"
+cp "$UPSTREAM/vendored-nolicense/SKILL.md" "$FIX/staged/vendored-nolicense/SKILL.md"
+printf -- '# Provenance\n\n- **Upstream path (this host):** `%s`\n' "$UPSTREAM/vendored-nolicense" > "$FIX/staged/vendored-nolicense/PROVENANCE.md"
 rc=$(run "$FIX/staged" --hero nine vendored-nolicense)
 check "depth RED vendored no LICENSE -> rc 1" "$rc" 1
 has   "depth RED vendored no LICENSE: names the reason" "$(cat "$FIX/err")" "no LICENSE file"
@@ -292,6 +299,110 @@ rc=$(SKILL_DEPTH_BAR_OVERRIDE="hero is a thin wrapper by design, see DIVE-9999" 
 check "override GREEN with reason -> rc 0" "$rc" 0
 has   "override GREEN: reason is echoed"  "$(cat "$FIX/err")" "DIVE-9999"
 has   "override GREEN: says OVERRIDDEN"   "$(cat "$FIX/err")" "OVERRIDDEN"
+
+echo "internal markers in a shipping artifact (DIVE-2866 — REFUSE, no override)"
+# Each RED fixture clears the depth bar via Arm A (mkskill's references/ file)
+# so ONLY the marker check can be the thing failing it.
+
+mkskill "$FIX/staged/marker-path-claude"
+printf '\nsee /home/claude/projects/5dive/notes.md for context\n' >> "$FIX/staged/marker-path-claude/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-path-claude)
+check "marker RED /home/claude path -> rc 1" "$rc" 1
+has   "marker RED: cites the ticket" "$(cat "$FIX/err")" "DIVE-2866"
+has   "marker RED: names the file"   "$(cat "$FIX/err")" "marker-path-claude/SKILL.md"
+has   "marker RED: names the label"  "$(cat "$FIX/err")" "internal filesystem path"
+hasnt "marker RED: never says ok"    "$(cat "$FIX/out")" "ok:"
+
+mkskill "$FIX/staged/marker-path-agent"
+printf '\nstaged at /home/agent-creative/.claude/skills/whatever\n' >> "$FIX/staged/marker-path-agent/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-path-agent)
+check "marker RED /home/agent-* path -> rc 1" "$rc" 1
+
+mkskill "$FIX/staged/marker-dive-ident"
+printf '\nfixed for DIVE-2841, see the ticket\n' >> "$FIX/staged/marker-dive-ident/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-dive-ident)
+check "marker RED DIVE row ident -> rc 1" "$rc" 1
+has   "marker RED DIVE ident: names the label" "$(cat "$FIX/err")" "task row ident"
+
+mkskill "$FIX/staged/marker-open-question"
+printf '\n## OPEN QUESTION — do not resolve by guessing, ask Priya\n' >> "$FIX/staged/marker-open-question/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-open-question)
+check "marker RED OPEN QUESTION -> rc 1" "$rc" 1
+has   "marker RED OPEN QUESTION: names the label" "$(cat "$FIX/err")" "addressed to a person"
+
+mkskill "$FIX/staged/marker-waiting-on"
+printf '\nstill waiting on Priya to confirm the licence holder\n' >> "$FIX/staged/marker-waiting-on/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-waiting-on)
+check "marker RED 'waiting on <name>' -> rc 1" "$rc" 1
+
+# DIVE-2866 review (main, on e6efd46): this arm used to assert on the ACTUAL
+# real telegram id, which meant shipping that literal, in the clear, inside
+# the guard meant to catch it. Fixed to an allowlist (RESERVED_FAKE_IDS) —
+# any id-shaped, non-reserved run trips it, so a plausible stand-in proves
+# the same thing without the source ever carrying the real value.
+mkskill "$FIX/staged/marker-real-id"
+printf '\ntest fixture accidentally carrying 987654321 instead of the reserved fake\n' >> "$FIX/staged/marker-real-id/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten marker-real-id)
+check "marker RED real identifier -> rc 1" "$rc" 1
+has   "marker RED real id: names the label" "$(cat "$FIX/err")" "reserved-fakes convention"
+
+# Negative control: the reserved fake itself must never trip this — it is the
+# value the convention tells everyone to use, not an id to refuse on.
+mkskill "$FIX/staged/clean-reserved-fake-id"
+printf '\ntelegram id 1234567890 (reserved fake, see CLAUDE.md convention)\n' >> "$FIX/staged/clean-reserved-fake-id/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten clean-reserved-fake-id)
+check "marker GREEN reserved fake id -> rc 0" "$rc" 0
+hasnt "marker GREEN reserved fake id: no false refusal" "$(cat "$FIX/err")" "DIVE-2866"
+
+# Noise calibration for the allowlist check itself, same standard as the
+# escalation/TODO arm above: measured against the real corpus (19 published
+# packs + 21 staged hero dirs), a bare 9-12-digit regex hit 5 false positives,
+# all magic/hash constants inside embedded JS code samples (mulberry32's
+# 4294967296, an XXH32-style hash's prime constants). Code spans are blanked
+# before the id scan runs, so a digit run that only ever appears inside a
+# fenced block must not refuse.
+mkskill "$FIX/staged/clean-id-in-code-block"
+printf '\n```js\nfunction hash(x) { return (x * 374761393) >>> 0; }\n```\n' >> "$FIX/staged/clean-id-in-code-block/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten clean-id-in-code-block)
+check "marker GREEN id-shaped number in code block -> rc 0" "$rc" 0
+hasnt "marker GREEN id in code block: no false refusal" "$(cat "$FIX/err")" "DIVE-2866"
+
+# Recursive: a marker inside references/, not just the top-level SKILL.md, must
+# still be caught — the shipping surface is bigger than one file (DIVE-2866).
+mkskill "$FIX/staged/marker-in-references"
+printf 'internal note: DIVE-2866 follow-up still open\n' > "$FIX/staged/marker-in-references/references/internal.md"
+rc=$(run "$FIX/staged" --hero ten marker-in-references)
+check "marker RED inside references/ -> rc 1" "$rc" 1
+has   "marker RED references/: names the nested file" "$(cat "$FIX/err")" "marker-in-references/references/internal.md"
+
+# The calibration negative: escalation vocabulary and TODO are ORDINARY
+# content and must never refuse, or this becomes the gate nobody obeys
+# (measured false positives: 8 shipped packs' compile-knowledge TODO advice,
+# plus contract-review/ticket-triage/support-reply's escalation vocabulary).
+mkskill "$FIX/staged/clean-escalation-vocab"
+printf '\nHandle price escalator clauses and the support escalation path. TODO: add more cases.\n' >> "$FIX/staged/clean-escalation-vocab/SKILL.md"
+rc=$(run "$FIX/staged" --hero ten clean-escalation-vocab)
+check "marker GREEN escalation/TODO vocabulary -> rc 0" "$rc" 0
+hasnt "marker GREEN: no false refusal" "$(cat "$FIX/err")" "DIVE-2866"
+
+# A second, real false-positive class found against production data (not in
+# the ticket's own calibration): PROVENANCE.md's OWN schema legitimately
+# carries an internal path (the DIVE-2859 vendored check's "Upstream path
+# (this host):" field) and a DIVE ident (citing the mechanism it complies
+# with). Neither is the proven incident shape. Both must stay GREEN.
+mkskill "$FIX/staged/vendored-clean-provenance"
+printf -- '# Provenance\n\n- **Upstream path (this host):** `/home/claude/somewhere/upstream`\n\nEditing this forks it and it becomes subject to the DIVE-2859 depth arms.\n' > "$FIX/staged/vendored-clean-provenance/PROVENANCE.md"
+rc=$(run "$FIX/staged" --hero ten vendored-clean-provenance)
+check "marker GREEN legitimate PROVENANCE.md schema -> rc 0" "$rc" 0
+hasnt "marker GREEN PROVENANCE.md: no false refusal" "$(cat "$FIX/err")" "DIVE-2866"
+
+# But PROVENANCE.md gets NO exemption from the addressed-to-a-person markers
+# — that file is exactly where the proven incident happened.
+mkskill "$FIX/staged/vendored-leaky-provenance"
+printf -- '# Provenance\n\n- **Upstream path (this host):** `/home/claude/somewhere/upstream`\n\n## OPEN QUESTION — do not resolve by guessing, ask Priya\n' > "$FIX/staged/vendored-leaky-provenance/PROVENANCE.md"
+rc=$(run "$FIX/staged" --hero ten vendored-leaky-provenance)
+check "marker RED PROVENANCE.md still catches OPEN QUESTION -> rc 1" "$rc" 1
+has   "marker RED PROVENANCE.md: names the file" "$(cat "$FIX/err")" "vendored-leaky-provenance/PROVENANCE.md"
 
 echo
 printf '%d passed, %d failed\n' "$pass" "$fail"

@@ -25,7 +25,7 @@
 // No dependencies: this must run in a checkout with no node_modules.
 
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { dirname, extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 
@@ -348,6 +348,126 @@ function roleWarnings(slug, skill) {
   return out;
 }
 
+// ------------------------------------------------------ internal markers
+
+// DIVE-2866: a provenance/status note staged inside a shipping skill dir is
+// PUBLISHED PROSE the moment the pack ships, not a scratchpad — proven by a
+// real near-miss, not a hypothetical: creative-ideation/PROVENANCE.md carried
+// an "OPEN QUESTION — do not resolve by guessing" naming a colleague, staged
+// for bo's ~Aug 26 ship. Resolved the same day before it shipped, but nothing
+// would have caught it if it hadn't been. Refuse at preflight — the only step
+// that currently sees the resolved source dir before assembly copies it into
+// a public pack (see community/wiki/a-status-note-inside-a-shipping-artifact-has-a-ship-date.md).
+//
+// CALIBRATED, not a wordlist. A naive grep on "TODO"/"escalate" was measured
+// to refuse NINE correct files: compile-knowledge's own advice text ("a link
+// to a file that doesn't exist yet is a fine TODO marker") in eight shipped
+// packs, plus contract-review/ticket-triage/support-reply's legitimate
+// escalation vocabulary. Key on STRUCTURAL markers and the ADDRESSED-TO-A-
+// PERSON shape, never on sentiment words — a control that refuses correct
+// work is the one people learn to bypass, which is worse than no control.
+//
+// HONEST LIMIT: this is a greppable subset. The real property is "prose
+// written for an internal reader," and a note that reads as ordinary prose
+// while being meant for us is invisible to it. Same caveat as the depth bar
+// (DIVE-2859), for the same reason: the check sees text, not audience.
+// STRUCTURAL markers: an internal path or a DIVE ident naming the mechanism.
+// Dangerous as a stray reference in ordinary prose, but PROVENANCE.md's own
+// schema legitimately carries both — "**Upstream path (this host):**
+// `/home/claude/...`" is the field the DIVE-2859 vendored check verifies
+// against, and "...subject to the DIVE-2859 depth arms" is that same file
+// citing the mechanism it complies with. Measured against the real corpus:
+// every currently-staged PROVENANCE.md trips both, on exactly those two
+// legitimate lines, not on anything resembling the proven incident shape.
+// So this group is exempt inside PROVENANCE.md specifically — not because
+// the file is trusted, but because these two markers can't tell "structural
+// self-reference" from "leak" and a PROVENANCE.md is where the former lives
+// by design.
+const STRUCTURAL_MARKERS = [
+  { re: /\/home\/claude\b/, label: "internal filesystem path (/home/claude)" },
+  { re: /\/home\/agent-[a-z0-9_-]+/i, label: "internal filesystem path (/home/agent-*)" },
+  { re: /\bDIVE-\d{3,}\b/, label: "internal task row ident (DIVE-N)" },
+];
+
+// ADDRESSED-TO-A-PERSON markers: this is the shape the proven incident
+// actually had (creative-ideation/PROVENANCE.md's own "OPEN QUESTION — do
+// not resolve by guessing" naming a colleague). No exemption anywhere,
+// PROVENANCE.md included — that file is exactly where it happened.
+const PERSON_ADDRESSED_MARKERS = [
+  { re: /\bOPEN QUESTION\b/, label: "open-question marker addressed to a person" },
+  { re: /\bwaiting on [A-Z][a-z]+\b/, label: "open-question marker addressed to a person ('waiting on <name>')" },
+];
+
+// Real-identifier check, as an ALLOWLIST rather than a denylist: flag any
+// id-shaped digit run that is NOT one of the reserved fakes from the 5dive
+// CLAUDE.md convention, instead of hardcoding the one real id this project
+// has already leaked (which would mean shipping that literal, in the clear,
+// inside the very guard meant to catch it — main caught this in review on
+// e6efd46, see DIVE-2866). This is also strictly stronger: it catches the
+// NEXT real id too, which a literal denylist can't by construction.
+//
+// Digit runs inside fenced/inline code spans are excluded — measured, not
+// assumed: a bare 9-12 digit regex over the real corpus (19 published packs
+// + 21 staged hero dirs) hit 5 false positives, all magic/hash constants in
+// embedded JS (mulberry32's 4294967296, techniques.md's XXH32-style primes)
+// plus one external AWS account id in a legitimate contributor doc. With
+// code spans stripped first, that corpus returns zero hits — the same
+// "measure the noise, don't argue it" standard this file already applies to
+// TODO/escalate. Applies everywhere PERSON_ADDRESSED_MARKERS applies: no
+// PROVENANCE.md exemption, since the real incident could equally have
+// carried a raw id instead of a name.
+const RESERVED_FAKE_IDS = new Set(["1234567890"]);
+const ID_SHAPED_RUN = /\b\d{9,12}\b/g;
+
+// Blanks code-span characters to 'x' (preserving length and newlines) rather
+// than deleting them, so match .index still lines up with the ORIGINAL text
+// for line-number reporting below.
+function stripCodeSpans(text) {
+  const blank = (s) => s.replace(/[^\n]/g, "x");
+  return text.replace(/```[\s\S]*?```/g, blank).replace(/`[^`\n]*`/g, blank);
+}
+
+function findRealIdHits(text) {
+  const hits = [];
+  for (const m of stripCodeSpans(text).matchAll(ID_SHAPED_RUN)) {
+    if (!RESERVED_FAKE_IDS.has(m[0])) {
+      hits.push({ index: m.index, label: `an id-shaped number that is not a reserved fake (use ${[...RESERVED_FAKE_IDS].join(", ")} — see the reserved-fakes convention)` });
+    }
+  }
+  return hits;
+}
+
+// Only text formats a skill dir plausibly carries. Binary/image assets
+// (avatar.png etc.) are outside this scan's reach entirely and outside
+// check-skills.mjs's reach generally — it only ever resolves a skill dir.
+const MARKER_SCAN_EXTENSIONS = new Set([".md", ".txt", ".yaml", ".yml", ".json"]);
+
+function scanForInternalMarkers(dir) {
+  const hits = [];
+  const walk = (d) => {
+    for (const entry of readdirSync(d, { withFileTypes: true })) {
+      const full = join(d, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      if (!MARKER_SCAN_EXTENSIONS.has(extname(entry.name).toLowerCase())) continue;
+      const text = readFileSync(full, "utf8");
+      const markers = entry.name === "PROVENANCE.md" ? PERSON_ADDRESSED_MARKERS : [...STRUCTURAL_MARKERS, ...PERSON_ADDRESSED_MARKERS];
+      for (const { re, label } of markers) {
+        const m = text.match(re);
+        if (m) hits.push({ file: full, line: text.slice(0, m.index).split("\n").length, label });
+      }
+      // Real-id allowlist check: same no-exemption scope as PERSON_ADDRESSED_MARKERS.
+      for (const { index, label } of findRealIdHits(text)) {
+        hits.push({ file: full, line: text.slice(0, index).split("\n").length, label });
+      }
+    }
+  };
+  if (existsSync(dir)) walk(dir);
+  return hits;
+}
+
 // ---------------------------------------------------------------- preflight
 
 function preflight(slug, skill) {
@@ -385,6 +505,19 @@ function preflight(slug, skill) {
       );
       process.exit(1);
     }
+  }
+
+  const markerHits = scanForInternalMarkers(src);
+  if (markerHits.length) {
+    console.error(
+      `REFUSED: pack '${slug}' curated hero skill '${skill}' contains internal markers in a\n` +
+        `  shipping artifact (DIVE-2866) — a provenance/status note inside a shipping dir is\n` +
+        `  published prose, not a scratchpad:\n` +
+        markerHits.map((h) => `    ${h.file}:${h.line} — ${h.label}`).join("\n") +
+        `\n  Rewrite the note before it ships (see community/wiki/a-status-note-inside-a-shipping-artifact-has-a-ship-date.md).\n` +
+        `  No override — unlike the depth bar this has no legitimate 'ship anyway' case.`
+    );
+    process.exit(1);
   }
 
   for (const w of roleWarnings(slug, skill)) console.warn(`warning: ${w}`);
