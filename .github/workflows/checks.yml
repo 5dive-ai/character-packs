@@ -13,11 +13,9 @@
 # @5dive/openagent from a git ref, and coupling a content assertion to a network
 # fetch is how a gate becomes flaky and then becomes ignored.
 #
-# `check:index` is deliberately NOT wired here. It is broken on a clean install —
-# scripts/build-index.mjs:36 does `require(join(OA, "node_modules", "yaml"))`,
-# reaching into the dependency's own nested node_modules, but npm hoists `yaml` to
-# the root, so that path never exists. Wiring it today would only paint main red.
-# Tracked separately rather than fixed here.
+# Keep `check:index` in its own job. Unlike the dependency-free content assertions,
+# it installs @5dive/openagent from a git ref before checking the computed index.
+# A network failure there must not prevent the deterministic jobs from reporting.
 
 name: checks
 
@@ -30,6 +28,19 @@ permissions:
   contents: read
 
 jobs:
+  index:
+    name: computed index matches pack personas and manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: install index dependencies
+        run: npm install
+      - name: build-index --check
+        run: npm run check:index
+
   cards:
     name: card Skills lines match their manifests
     runs-on: ubuntu-latest
