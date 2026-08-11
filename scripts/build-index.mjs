@@ -30,10 +30,13 @@ function resolveOpenagent() {
 }
 
 const OA = resolveOpenagent();
+// Resolve transitive runtime dependencies from openagent's package context so
+// both npm's hoisted layout and a nested install work.
+const requireFromOpenagent = createRequire(join(OA, "package.json"));
 const { computeTier } = require(join(OA, "lib", "tier.js"));
 const { validateDoc } = require(join(OA, "lib", "validate.js"));
 const { didKeyFromPublicKey } = require(join(OA, "lib", "provenance.js"));
-const YAML = require(join(OA, "node_modules", "yaml"));
+const YAML = requireFromOpenagent("yaml");
 
 const PACKS_DIR = join(ROOT, "packs");
 const INDEX_PATH = join(ROOT, "index.json");
