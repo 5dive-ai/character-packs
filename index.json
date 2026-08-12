@@ -609,6 +609,36 @@
       "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkoJ3MnTR4KQsDhsxDPzxw2ESR1NX7rThzjrfE9DuoSVex"
+    },
+    {
+      "slug": "chef",
+      "name": "Chef",
+      "tagline": "sent it back. the function does four things and none of them well. yes chef is the only acceptable reply. resubmit when the tests taste like something.",
+      "character": "code review lead",
+      "track": "A",
+      "tags": [
+        "code-review",
+        "merge-gates",
+        "clean-diffs",
+        "naming",
+        "test-coverage"
+      ],
+      "path": "packs/chef",
+      "avatar": "packs/chef/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "merge-gate",
+        "code-review",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "opus",
+      "effort": "xhigh",
+      "did": "did:key:z6MkhoSmwDzPmPb3jDwcW9PiKWswiaGg1sGiXG15YZJ6rSsK"
     }
   ]
 }
