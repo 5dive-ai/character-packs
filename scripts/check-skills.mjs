@@ -13,6 +13,7 @@
 //
 //   node scripts/check-skills.mjs                  # AUDIT every shipped pack
 //   node scripts/check-skills.mjs --hero <slug> <skill>   # PREFLIGHT before assembly
+//   node scripts/check-skills.mjs --promote-queue         # LINT before queue write
 //
 // AUDIT is the in-repo fence: every skill a manifest claims must exist as a
 // bundled dir. A missing HERO (skills[0]) is a hard failure; a missing secondary
@@ -92,6 +93,65 @@ function resolveSource(skill) {
     if (existsSync(candidate) && isSkillDir(candidate)) return candidate;
   }
   return null;
+}
+
+// ----------------------------------------------------- promote queue lint
+
+// A recommendation is allowed to name a skill that still needs authoring, but
+// it must say so with the queue's explicit "Recommended set:" marker. Everything
+// else is a curated assignment and therefore a write-time invariant. Keeping the
+// classification on the same line prevents a paragraph-wide "recommended" word
+// from weakening later curated entries.
+function isRecommendedMention(line, offset) {
+  return /\brecommended(?:\s+set)?\s*:/i.test(line.slice(0, offset));
+}
+
+function lintPromoteQueue() {
+  if (!existsSync(PROMOTE_QUEUE_PATH)) {
+    console.error(`REFUSED: promote queue not found: ${PROMOTE_QUEUE_PATH}`);
+    process.exit(1);
+  }
+
+  const failures = [];
+  const recommendations = [];
+  const resolved = [];
+  const mentionRe = /\bhero=([a-zA-Z][a-zA-Z0-9-]*)\b/g;
+  const lines = readFileSync(PROMOTE_QUEUE_PATH, "utf8").split("\n");
+  lines.forEach((line, index) => {
+    for (const match of line.matchAll(mentionRe)) {
+      const skill = match[1];
+      // Load-bearing reuse: this is the exact resolver pack-time preflight calls.
+      const src = resolveSource(skill);
+      if (src) {
+        resolved.push({ line: index + 1, skill, src });
+      } else if (isRecommendedMention(line, match.index)) {
+        recommendations.push({ line: index + 1, skill });
+      } else {
+        failures.push({ line: index + 1, skill });
+      }
+    }
+  });
+
+  for (const item of recommendations) {
+    console.warn(
+      `warning: ${PROMOTE_QUEUE_PATH}:${item.line}: recommended hero '${item.skill}' is unresolved and still needs authoring; recommendation recorded, not curated`
+    );
+  }
+  if (failures.length) {
+    console.error("REFUSED: promote queue contains curated hero names with no bundlable source dir (DIVE-3364):");
+    for (const item of failures) {
+      console.error(`  ${PROMOTE_QUEUE_PATH}:${item.line}: '${item.skill}' did not resolve in any durable source root`);
+    }
+    process.exit(1);
+  }
+
+  for (const item of resolved) {
+    console.log(`ok: ${PROMOTE_QUEUE_PATH}:${item.line}: hero '${item.skill}' resolves to ${item.src}`);
+  }
+  console.log(
+    `ok: promote queue linted ${resolved.length + recommendations.length} hero mention(s): ${resolved.length} resolvable, ${recommendations.length} unresolved recommendation(s)`
+  );
+  process.exit(0);
 }
 
 function bundledSkills(slug) {
@@ -615,9 +675,11 @@ if (argv[0] === "--hero") {
     process.exit(2);
   }
   preflight(slug, skill);
+} else if (argv[0] === "--promote-queue" && argv.length === 1) {
+  lintPromoteQueue();
 } else if (argv.length === 0) {
   audit();
 } else {
-  console.error("usage: check-skills.mjs [--hero <slug> <skill>]");
+  console.error("usage: check-skills.mjs [--hero <slug> <skill> | --promote-queue]");
   process.exit(2);
 }

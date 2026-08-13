@@ -8,6 +8,7 @@
     "check:index": "node scripts/build-index.mjs --check",
     "check:skills": "node scripts/check-skills.mjs",
     "preflight:hero": "node scripts/check-skills.mjs --hero",
+    "lint:promote-queue": "node scripts/check-skills.mjs --promote-queue",
     "test:skills": "bash scripts/test-check-skills.sh"
   },
   "devDependencies": {

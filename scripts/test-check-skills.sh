@@ -100,6 +100,38 @@ has   "RED unresolvable: names the slug"  "$(cat "$FIX/err")" "bravo"
 has   "RED unresolvable: names the skill" "$(cat "$FIX/err")" "nowhere-skill"
 hasnt "RED unresolvable: never says ok"   "$(cat "$FIX/out")" "ok:"
 
+echo "promote queue write-time lint"
+# A fabricated curated assignment in ordinary queue prose must be caught, not
+# only the narrow held-line shape consumed by heldPacks(). This fixture is
+# isolated from the real queue, so the bad spelling cannot re-enter its buffer.
+printf '# correction prose accidentally repeats hero=zzz-fixture-unresolved\n' > "$FIX/promote-queue.txt"
+rc=$(run "$FIX/staged" --promote-queue)
+check "queue RED fabricated curated hero -> rc 1" "$rc" 1
+has   "queue RED: names the unresolved skill" "$(cat "$FIX/err")" "zzz-fixture-unresolved"
+has   "queue RED: reports its queue line" "$(cat "$FIX/err")" ":1:"
+hasnt "queue RED: never reports lint ok" "$(cat "$FIX/out")" "promote queue linted"
+
+# The real-name cross-root acceptance: loops is absent from the fixture's obvious
+# staging root and present only under a second durable root. The production receipt
+# runs the same arm against 5dive-skills/loops; keeping the test's root under FIX
+# makes it reproducible on CI hosts that do not mount the aggregate workspace.
+mkskill "$FIX/non-obvious/loops"
+printf '#   fixture  hero=loops  CURATED\n' > "$FIX/promote-queue.txt"
+rc=$(run "$FIX/staged:$FIX/non-obvious" --promote-queue)
+check "queue GREEN real hero on non-obvious durable root -> rc 0" "$rc" 0
+has   "queue GREEN: reports the non-obvious resolved path" "$(cat "$FIX/out")" "$FIX/non-obvious/loops"
+
+# An intentionally unauthored recommendation is information, not a curated
+# assignment. It must remain visible as unresolved without blocking the write.
+printf '# fixture RESEARCHED. Recommended set: hero=docs-repair\n' > "$FIX/promote-queue.txt"
+rc=$(run "$FIX/staged" --promote-queue)
+check "queue RECOMMENDED unresolved -> rc 0" "$rc" 0
+has   "queue RECOMMENDED: reports unresolved" "$(cat "$FIX/err")" "docs-repair"
+has   "queue RECOMMENDED: distinguishes recommendation" "$(cat "$FIX/err")" "not curated"
+
+# Restore isolation for the existing collision tests below.
+printf '# empty\n' > "$FIX/promote-queue.txt"
+
 # Poisoned find: a SKILL.md that exists ONLY in an excluded location must still
 # refuse. This is what separates the exclusion list from "nothing was there".
 rc=$(run "$FIX/packs/alpha/skills-vendored:$FIX/vendor/.tmp/plugins" --hero charlie ghost-c)
