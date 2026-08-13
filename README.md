@@ -124,6 +124,13 @@ npm run preflight:hero -- <slug> <hero-skill>   # BEFORE assembling
 npm run check:skills                            # audit every shipped pack (also in CI)
 ```
 
+Curated queue edits have an earlier fence. Run `npm run lint:promote-queue`
+before writing `promote-queue.txt`; every `hero=` mention is resolved with the
+same durable-root resolver as `preflight:hero`. An explicit `Recommended set:`
+may remain unresolved and is reported as an authoring warning, while every other
+unresolved hero mention refuses the write. The check does not depend on a live
+`character-packs` checkout to discover source roots.
+
 `preflight:hero` is the one that matters, because it runs while the curated hero is
 still known — once the manifest is written the substitution is indistinguishable from
 an honest pack. It resolves the skill against **durable** source roots only
