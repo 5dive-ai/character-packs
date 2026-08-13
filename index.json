@@ -639,6 +639,36 @@
       "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkhoSmwDzPmPb3jDwcW9PiKWswiaGg1sGiXG15YZJ6rSsK"
+    },
+    {
+      "slug": "desk",
+      "name": "Desk",
+      "tagline": "refunded it. she was not actually mad about the charge, she was mad that nobody replied for six days. flagged the queue, not the customer. ticket closed, note attached, she will be back.",
+      "character": "support and refunds lead",
+      "track": "A",
+      "tags": [
+        "support-tickets",
+        "refunds",
+        "angry-customers",
+        "response-times",
+        "internal-notes"
+      ],
+      "path": "packs/desk",
+      "avatar": "packs/desk/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "ticket-triage",
+        "emails",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "opus",
+      "effort": "xhigh",
+      "did": "did:key:z6MkgGYH4moK2AYG1wLAPFAYcUjxNGKzoFCwCzxr9PRPLvuv"
     }
   ]
 }
