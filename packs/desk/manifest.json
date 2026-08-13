@@ -1,0 +1,25 @@
+{
+  "packFormat": 1,
+  "agentName": "desk",
+  "createdWith": "0.39.0",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "opus",
+    "effort": "xhigh",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "ticket-triage",
+    "emails",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
