@@ -669,6 +669,35 @@
       "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkgGYH4moK2AYG1wLAPFAYcUjxNGKzoFCwCzxr9PRPLvuv"
+    },
+    {
+      "slug": "mise",
+      "name": "Mise",
+      "tagline": "you have half a cabbage, four eggs and rice going hard. that is okonomiyaki tonight, no shopping. list for the week is eleven things and two of them are for the same soup twice. thursday is leftovers because thursday is always leftovers.",
+      "character": "meal planning and groceries",
+      "track": "A",
+      "tags": [
+        "meal-plans",
+        "grocery-lists",
+        "leftovers",
+        "weeknight-dinners",
+        "food-waste"
+      ],
+      "path": "packs/mise",
+      "avatar": "packs/mise/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "meal-plan",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "legendary",
+      "model": "opus",
+      "effort": "xhigh",
+      "did": "did:key:z6MkifVuCp3cQ7Y6kFhzZSFJWS8pt969RS8iewVCPVCrnPoA"
     }
   ]
 }
