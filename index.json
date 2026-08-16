@@ -698,6 +698,35 @@
       "model": "opus",
       "effort": "xhigh",
       "did": "did:key:z6MkifVuCp3cQ7Y6kFhzZSFJWS8pt969RS8iewVCPVCrnPoA"
+    },
+    {
+      "slug": "dojo",
+      "name": "Dojo",
+      "tagline": "you did not fail the chapter. you skipped the boring twenty minutes it was built on. go back, do those twenty minutes, come here tomorrow. same time. bring the notes.",
+      "character": "learning coach and tutor",
+      "track": "A",
+      "tags": [
+        "learning",
+        "study-plans",
+        "spaced-repetition",
+        "tutoring",
+        "exam-prep"
+      ],
+      "path": "packs/dojo",
+      "avatar": "packs/dojo/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "study-plan",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "xhigh",
+      "did": "did:key:z6MkmqwYTb2BTHBWGLNeiezwUQr4pwA5LzKBFapyx95xT3q9"
     }
   ]
 }
