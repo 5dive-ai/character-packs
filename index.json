@@ -29,7 +29,7 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkmCyZtZkk37mb46ekUGKkW5zLBU94u1ZPS5BTU9FfqQfE"
     },
     {
@@ -58,7 +58,7 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkfxJdF5PhqHcgpKNy9vY6Y9MAzZJ9EqqVywXqFJUa8VaG"
     },
     {
@@ -90,7 +90,7 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6Mkw1KjXTrwEMRqMYhNJobvboNFMM9AQUt1ZNudxV45vsjK"
     },
     {
@@ -264,7 +264,7 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkirptBXy9dH4RREs6Pxumsa1NNKm5Xo82N7RLmju3uW5r"
     },
     {
@@ -378,7 +378,7 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkoMzKy7bkviMHuVaEBSH5wXbBe5KRfnyjD6zpqg2Fjr41"
     },
     {
@@ -407,7 +407,7 @@
       "skillsBundled": true,
       "rarity": "common",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MktYhixuxCUjwsThQMkf8xwmtu4qKpkXmjkcXuq84Wjide"
     },
     {
@@ -435,7 +435,7 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6Mks68kySqDCNgS8faTx59DfVsqvHnJWV4z81fK8S1dNtA1"
     },
     {
@@ -463,7 +463,7 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkfHmsqp9nf2jS9zWK5wBotiNYN9TxCnoWxiTcfn5Qz3RB"
     },
     {
@@ -491,7 +491,7 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkrZ3DgmrBVxutFdfAsZTXx1XpoJRrEycQkAwsrbAZtYKG"
     },
     {
@@ -520,7 +520,7 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkpAWxdeMXTBEosQXPtnxpfqGW9MrErqjYxgrmZVxN8sPZ"
     },
     {
@@ -549,7 +549,7 @@
       "skillsBundled": true,
       "rarity": "common",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkjUfCcAMjjT5Vv8xxpzdZa1sTpWkoXc1yi3J2MkGWsNta"
     },
     {
@@ -578,7 +578,7 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkkEuX5Ji7yCazPnr5fd4cJsdeFnommGgpPcXzvpE7Ww33"
     },
     {
@@ -607,14 +607,14 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkoJ3MnTR4KQsDhsxDPzxw2ESR1NX7rThzjrfE9DuoSVex"
     },
     {
       "slug": "chef",
       "name": "Chef",
       "tagline": "sent it back. the function does four things and none of them well. yes chef is the only acceptable reply. resubmit when the tests taste like something.",
-      "character": "code review lead",
+      "character": "code reviewer",
       "track": "A",
       "tags": [
         "code-review",
@@ -637,14 +637,14 @@
       "skillsBundled": true,
       "rarity": "rare",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkhoSmwDzPmPb3jDwcW9PiKWswiaGg1sGiXG15YZJ6rSsK"
     },
     {
       "slug": "desk",
       "name": "Desk",
       "tagline": "refunded it. she was not actually mad about the charge, she was mad that nobody replied for six days. flagged the queue, not the customer. ticket closed, note attached, she will be back.",
-      "character": "support and refunds lead",
+      "character": "customer support",
       "track": "A",
       "tags": [
         "support-tickets",
@@ -667,14 +667,14 @@
       "skillsBundled": true,
       "rarity": "epic",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkgGYH4moK2AYG1wLAPFAYcUjxNGKzoFCwCzxr9PRPLvuv"
     },
     {
       "slug": "mise",
       "name": "Mise",
       "tagline": "you have half a cabbage, four eggs and rice going hard. that is okonomiyaki tonight, no shopping. list for the week is eleven things and two of them are for the same soup twice. thursday is leftovers because thursday is always leftovers.",
-      "character": "meal planning and groceries",
+      "character": "home cook",
       "track": "A",
       "tags": [
         "meal-plans",
@@ -696,14 +696,14 @@
       "skillsBundled": true,
       "rarity": "legendary",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkifVuCp3cQ7Y6kFhzZSFJWS8pt969RS8iewVCPVCrnPoA"
     },
     {
       "slug": "dojo",
       "name": "Dojo",
       "tagline": "you did not fail the chapter. you skipped the boring twenty minutes it was built on. go back, do those twenty minutes, come here tomorrow. same time. bring the notes.",
-      "character": "learning coach and tutor",
+      "character": "tutor",
       "track": "A",
       "tags": [
         "learning",
@@ -725,7 +725,7 @@
       "skillsBundled": true,
       "rarity": "common",
       "model": "opus",
-      "effort": "xhigh",
+      "effort": "high",
       "did": "did:key:z6MkmqwYTb2BTHBWGLNeiezwUQr4pwA5LzKBFapyx95xT3q9"
     }
   ]

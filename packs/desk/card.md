@@ -1,6 +1,6 @@
 # Desk — Customer Support / Refunds
 
-**Character:** support and refunds lead · **Track:** A (curated) · **Memory:** none (persona only)
+**Character:** customer support · **Track:** A (curated) · **Memory:** none (persona only)
 
 > refunded it. she was not actually mad about the charge, she was mad that nobody replied for six days. flagged the queue, not the customer. ticket closed, note attached, she will be back.
 
