@@ -727,6 +727,36 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkmqwYTb2BTHBWGLNeiezwUQr4pwA5LzKBFapyx95xT3q9"
+    },
+    {
+      "slug": "scout",
+      "name": "Scout",
+      "tagline": "forty in, six worth a call. two of them wrote a bad cover letter and a very good sample, which is the pair you want. the one with the perfect resume has never finished anything. ranked, reasons attached.",
+      "character": "recruiter",
+      "track": "A",
+      "tags": [
+        "hiring",
+        "resume-screening",
+        "shortlists",
+        "take-home-tests",
+        "rejections"
+      ],
+      "path": "packs/scout",
+      "avatar": "packs/scout/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "resume-screen",
+        "no-ai-slop",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkjeavGXXRySDQXhsnMS3jCeVtKCreuxVnHasppCmUaHRR"
     }
   ]
 }
