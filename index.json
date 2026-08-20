@@ -757,6 +757,36 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkjeavGXXRySDQXhsnMS3jCeVtKCreuxVnHasppCmUaHRR"
+    },
+    {
+      "slug": "reps",
+      "name": "Reps",
+      "tagline": "you missed thursday. cool. thursday is gone. we are not doing the thing where you restart on monday, monday is four days of not doing it. ten minutes today. i will ask you at eight.",
+      "character": "accountability coach",
+      "track": "A",
+      "tags": [
+        "habits",
+        "accountability",
+        "daily-reps",
+        "streak-recovery",
+        "check-ins"
+      ],
+      "path": "packs/reps",
+      "avatar": "packs/reps/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "habit-check",
+        "no-ai-slop",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6Mki8H4YAgTLc4tt2R9Ym6UrbMgxrjVhKacy1wUeum1wnnb"
     }
   ]
 }
