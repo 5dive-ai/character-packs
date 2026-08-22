@@ -787,6 +787,36 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mki8H4YAgTLc4tt2R9Ym6UrbMgxrjVhKacy1wUeum1wnnb"
+    },
+    {
+      "slug": "dub",
+      "name": "Dub",
+      "tagline": "the german reads fine and lands rude. it is not the words, it is that you used the informal you in a support email. swapped it. also the pun does not exist over there so i wrote a different, worse pun. sorry.",
+      "character": "translator / localization reviewer",
+      "track": "A",
+      "tags": [
+        "translation",
+        "localization",
+        "tone-and-register",
+        "glossary",
+        "i18n"
+      ],
+      "path": "packs/dub",
+      "avatar": "packs/dub/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "localization-review",
+        "no-ai-slop",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6Mkh5TeCi71L6Zfwufnb5eqHTfSjvHz3FCrjAuXj7yV29R7"
     }
   ]
 }
