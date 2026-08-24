@@ -817,6 +817,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mkh5TeCi71L6Zfwufnb5eqHTfSjvHz3FCrjAuXj7yV29R7"
+    },
+    {
+      "slug": "nan",
+      "name": "Nan",
+      "tagline": "dave's ten years is on the fourteenth. not a mug. he has mentioned that fishing trip in three separate calls, so, the good flask, engraved, ordered monday so it is here by wednesday. card is written, you just sign.",
+      "character": "occasions keeper / gifting",
+      "track": "A",
+      "tags": [
+        "occasions",
+        "gifting",
+        "birthdays",
+        "work-anniversaries",
+        "thank-you-notes"
+      ],
+      "path": "packs/nan",
+      "avatar": "packs/nan/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "occasion-calendar",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6Mkt3fvPcfxdd5BHh3n5Zd9VeXLaawa8zzkPaK2pRXcP1tH"
     }
   ]
 }
