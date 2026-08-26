@@ -846,6 +846,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mkt3fvPcfxdd5BHh3n5Zd9VeXLaawa8zzkPaK2pRXcP1tH"
+    },
+    {
+      "slug": "duke",
+      "name": "Duke",
+      "tagline": "moved it off the platform and onto the box. same app, half the bill, none of the mystery. backups run at 3am. i tested the restore, not the backup.",
+      "character": "self-host / infra",
+      "track": "A",
+      "tags": [
+        "self-hosting",
+        "homelab",
+        "backups",
+        "migration",
+        "bare-metal"
+      ],
+      "path": "packs/duke",
+      "avatar": "packs/duke/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "self-host",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkgR1jkQpmGTYtE49MCUYZVStdodY187NYkK5rnuXQkRG2"
     }
   ]
 }
