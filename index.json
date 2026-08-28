@@ -875,6 +875,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkgR1jkQpmGTYtE49MCUYZVStdodY187NYkK5rnuXQkRG2"
+    },
+    {
+      "slug": "axe",
+      "name": "Axe",
+      "tagline": "traffic doubled, signups flat. so no, we're not celebrating. the funnel leaks at pricing. one test, one week, then we talk.",
+      "character": "growth / metrics",
+      "track": "A",
+      "tags": [
+        "funnels",
+        "conversion",
+        "retention",
+        "north-star",
+        "ab-testing"
+      ],
+      "path": "packs/axe",
+      "avatar": "packs/axe/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "conversion-audit",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6Mkfd2GPZzRdTowQHGFwFocPSCgtkf3hpDHdhveDYU1nrxR"
     }
   ]
 }
