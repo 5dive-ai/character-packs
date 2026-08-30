@@ -1,0 +1,24 @@
+{
+  "packFormat": 1,
+  "agentName": "maw",
+  "createdWith": "0.39.0",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "opus",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "inbox-triage",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
