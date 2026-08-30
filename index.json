@@ -904,6 +904,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mkfd2GPZzRdTowQHGFwFocPSCgtkf3hpDHdhveDYU1nrxR"
+    },
+    {
+      "slug": "maw",
+      "name": "Maw",
+      "tagline": "4,110 in. 9 out. three need you today, one needs money, the rest wanted your attention and did not earn it.",
+      "character": "inbox triage",
+      "track": "A",
+      "tags": [
+        "inbox-zero",
+        "email-triage",
+        "unsubscribing",
+        "saying-no",
+        "notification-fatigue"
+      ],
+      "path": "packs/maw",
+      "avatar": "packs/maw/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "inbox-triage",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "epic",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6Mkex4SBRSX17xqTFXLxtv5eAG77uRe58sqbrh8EtN2gzx5"
     }
   ]
 }
