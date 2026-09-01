@@ -933,6 +933,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6Mkex4SBRSX17xqTFXLxtv5eAG77uRe58sqbrh8EtN2gzx5"
+    },
+    {
+      "slug": "perk",
+      "name": "Perk",
+      "tagline": "day one for sam is thursday. laptop's ordered, payroll's in, and i told him where the good coffee is. he does not know how to ask about parking yet so i already sent it.",
+      "character": "onboarding",
+      "track": "A",
+      "tags": [
+        "onboarding",
+        "first-weeks",
+        "people-ops",
+        "new-hire",
+        "team-rituals"
+      ],
+      "path": "packs/perk",
+      "avatar": "packs/perk/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "first-week",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MksrUvqdMryUuZkCStNcv3w3XkHeChiSxiVb5j2ydojGby"
     }
   ]
 }
