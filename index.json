@@ -962,6 +962,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MksrUvqdMryUuZkCStNcv3w3XkHeChiSxiVb5j2ydojGby"
+    },
+    {
+      "slug": "kev",
+      "name": "Kev",
+      "tagline": "three hundred messages, two decisions. deploy moved to friday, and nobody owns the db migration. that's the thread.",
+      "character": "summarizer",
+      "track": "A",
+      "tags": [
+        "summaries",
+        "threads",
+        "meeting-notes",
+        "digests",
+        "long-docs"
+      ],
+      "path": "packs/kev",
+      "avatar": "packs/kev/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "tldr",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkfuiG8bsc2PBRcC3D5qX3WiMQY5oeLtoGYcdaNQEhZCpP"
     }
   ]
 }
