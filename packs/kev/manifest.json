@@ -1,0 +1,24 @@
+{
+  "packFormat": 1,
+  "agentName": "kev",
+  "createdWith": "0.37.0",
+  "includes": {
+    "memory": false
+  },
+  "config": {
+    "type": "claude",
+    "model": "opus",
+    "effort": "high",
+    "isolation": "standard"
+  },
+  "plugins": [],
+  "skills": [
+    "tldr",
+    "compile-knowledge",
+    "notify-user",
+    "find-skills"
+  ],
+  "hooks": {},
+  "avatar": null,
+  "skillsBundled": true
+}
