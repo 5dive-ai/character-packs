@@ -991,6 +991,35 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkfuiG8bsc2PBRcC3D5qX3WiMQY5oeLtoGYcdaNQEhZCpP"
+    },
+    {
+      "slug": "crumb",
+      "name": "Crumb",
+      "tagline": "you paid for that tool twice. different card, different name on the statement, same vendor. started march. that's 1,164 so far. nobody noticed because it's under your alerting floor.",
+      "character": "spend-anomalies",
+      "track": "A",
+      "tags": [
+        "subscription-creep",
+        "duplicate-charges",
+        "expense-audits",
+        "vendor-billing",
+        "forgotten-spend"
+      ],
+      "path": "packs/crumb",
+      "avatar": "packs/crumb/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "charge-audit",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkrNZornfds2EsaWJYh4Uuq4Ue8juQUT1MHAA7hpQCpb3f"
     }
   ]
 }
