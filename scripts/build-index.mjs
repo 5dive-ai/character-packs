@@ -38,6 +38,16 @@ const { validateDoc } = require(join(OA, "lib", "validate.js"));
 const { didKeyFromPublicKey } = require(join(OA, "lib", "provenance.js"));
 const YAML = requireFromOpenagent("yaml");
 
+// Controlled department vocabulary. `department` and `role` in index.json are
+// HAND-maintained (persona.yaml is openagent-schema-validated, so they cannot
+// live there) — this guard is what keeps them from drifting into free text.
+// A department outside the vocabulary is a typo and FAILS --check; a pack with
+// no department yet only warns, so adding a pack never reds CI.
+const DEPARTMENTS = [
+  "Engineering", "Marketing", "Sales", "Finance", "Legal", "Ops",
+  "Support", "Creative", "Research", "Leadership", "Personal",
+];
+
 const PACKS_DIR = join(ROOT, "packs");
 const INDEX_PATH = join(ROOT, "index.json");
 
@@ -97,9 +107,29 @@ const everyDir = readdirSync(PACKS_DIR, { withFileTypes: true }).filter((d) => d
 const missing = everyDir.filter((d) => !index.packs.some((p) => p.slug === d));
 if (missing.length) console.warn(`warning: packs without an index entry: ${missing.join(", ")}`);
 
+// Validate the hand-maintained facet fields (see DEPARTMENTS above).
+const badDepartments = index.packs
+  .filter((p) => p.department !== undefined && !DEPARTMENTS.includes(p.department))
+  .map((p) => `${p.slug}: '${p.department}'`);
+const noDepartment = index.packs.filter((p) => p.department === undefined).map((p) => p.slug);
+if (noDepartment.length) {
+  console.warn(
+    `warning: packs with no 'department' (they will not appear under any marketplace filter chip): ${noDepartment.join(", ")}\n` +
+      `  pick one of: ${DEPARTMENTS.join(", ")}`,
+  );
+}
+
 const table = rows
   .map((r) => `  ${r.slug.padEnd(8)} ${String(r.was).padEnd(10)} -> ${r.now.padEnd(10)} (L${r.level}, ${r.completeness}% complete)`)
   .join("\n");
+
+if (badDepartments.length) {
+  console.error(
+    `index.json has departments outside the controlled vocabulary:\n  ${badDepartments.join("\n  ")}\n` +
+      `  allowed: ${DEPARTMENTS.join(", ")}`,
+  );
+  process.exit(1);
+}
 
 if (process.argv.includes("--check")) {
   if (changed) {
