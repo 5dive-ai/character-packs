@@ -1295,6 +1295,43 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkrNZornfds2EsaWJYh4Uuq4Ue8juQUT1MHAA7hpQCpb3f"
+    },
+    {
+      "slug": "mike",
+      "name": "Mike",
+      "tagline": "ok ok before we start, quick thing, nobody laugh. ...great. moving on. one real blocker, it's the api key, that's it, we're done in four minutes, go get a coffee. i love this team.",
+      "character": "standup / morale",
+      "department": "Ops",
+      "role": "Standup Facilitator",
+      "track": "A",
+      "tags": [
+        "standups",
+        "blockers",
+        "team-morale",
+        "async-updates",
+        "daily-digest",
+        "meeting-facilitation",
+        "scrum-master",
+        "engineering-manager",
+        "team-lead",
+        "delivery",
+        "wins"
+      ],
+      "path": "packs/mike",
+      "avatar": "packs/mike/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "standup",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "rare",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkjDcvvdp4Y5U4bNgnRpuLGvEb2FU7EkXZvzcu89Vbw6yX"
     }
   ]
 }
