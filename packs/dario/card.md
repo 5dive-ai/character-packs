@@ -1,6 +1,6 @@
 # Dario — Engineer
 
-**Character:** Engineer · **Track:** A (curated) · **Memory:** none (persona only)
+**Character:** Engineer · **Track:** A (curated) · **Memory:** seed
 
 > Heads-down builder, mind ahead of his mouth. Lights up explaining how it works. Quiet pride in clean code.
 
