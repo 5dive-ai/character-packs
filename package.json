@@ -1,7 +1,7 @@
 {
   "name": "character-packs",
   "private": true,
-  "description": "5dive character packs — importable AI-agent persona packs.",
+  "description": "5dive marketplace registry \u2014 importable AI-agent persona packs and pre-wired company templates.",
   "type": "module",
   "scripts": {
     "build:index": "node scripts/build-index.mjs",
@@ -9,7 +9,9 @@
     "check:skills": "node scripts/check-skills.mjs",
     "preflight:hero": "node scripts/check-skills.mjs --hero",
     "lint:promote-queue": "node scripts/check-skills.mjs --promote-queue",
-    "test:skills": "bash scripts/test-check-skills.sh"
+    "test:skills": "bash scripts/test-check-skills.sh",
+    "check:teams": "bash scripts/check-teams.sh",
+    "check:team-skills": "bash scripts/check-team-skills.sh"
   },
   "devDependencies": {
     "@5dive/openagent": "github:5dive-ai/openagent"

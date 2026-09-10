@@ -1,6 +1,8 @@
 # 5dive character packs
 
-A **git registry** of curated, importable AI-agent persona packs for [5dive](https://github.com/5dive-ai/5dive).
+A **git registry** of curated, importable AI-agent persona packs for [5dive](https://github.com/5dive-ai/5dive) —
+and, since DIVE-4196, of the **company templates** in [`teams/`](teams/) as well. One marketplace repo:
+a team is a marketplace artifact the same way a pack is, and both are published without a CLI release.
 A pack is a persona (CLAUDE.md + config + skill refs), optionally with **distilled
 seed memory** ([see below](#memory--pre-trained-packs)) — **never** raw private memory or secrets.
 You bring your own keys + bot; the pack brings the character.
@@ -9,6 +11,8 @@ You bring your own keys + bot; the pack brings the character.
 
 ```bash
 5dive agent import <slug> --as=<your-name>      # pull a pack straight from this repo
+5dive team ls                                   # browse the company templates in teams/
+5dive team import <slug>                        # provision a whole pre-wired roster
 ```
 
 Full CLI docs: https://5dive.ai/docs/5dive-cli.
