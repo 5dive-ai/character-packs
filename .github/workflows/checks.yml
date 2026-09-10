@@ -66,3 +66,26 @@ jobs:
         run: node scripts/check-skills.mjs
       - name: check-skills unit tests
         run: bash scripts/test-check-skills.sh
+
+  teams:
+    name: team templates match their index, and their skills exist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Dependency-free (bash + jq + gh, all preinstalled on the runner) — same
+      # reasoning as the cards and skills jobs above, so no install step.
+      #
+      # DIVE-4196 wired this. Until it existed, teams/ had two committed checkers
+      # and no job running them, which is the exact shape this file's own header
+      # warns about: a check that EXISTS is not a check that FIRES. It matters
+      # here because the CLI and the dashboard now read teams/index.json LIVE, so
+      # a bad publish reaches customers with no release cut in front of it.
+      - name: check-teams (index, paths, schemaVersion and rosters agree)
+        run: npm run check:teams
+      # Reads 5dive-ai/skills (public) cross-repo, so it needs a token in the
+      # environment. It exits 2 — deliberately NOT a pass — when it cannot read
+      # the skill list, so an unreadable check reds the job instead of going green.
+      - name: check-team-skills (every template skill reference resolves)
+        run: npm run check:team-skills
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
