@@ -1,4 +1,11 @@
-# 5dive character packs
+# 5dive marketplace
+
+> **Formerly `5dive-ai/character-packs`.** The repo was renamed on 2026-09-11;
+> GitHub redirects the old clone and `raw.githubusercontent.com` URLs, so nothing
+> you have pinned is broken. New readers should name `5dive-ai/5dive-marketplace`
+> directly — the redirect lives only until someone creates a repo at the old name,
+> which is why one must never be created there again.
+
 
 A **git registry** of curated, importable AI-agent persona packs for [5dive](https://github.com/5dive-ai/5dive) —
 and, since DIVE-4196, of the **company templates** in [`teams/`](teams/) as well. One marketplace repo:
