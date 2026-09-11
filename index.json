@@ -519,7 +519,7 @@
       "tagline": "it's not the null check. it's the timezone. it's always the timezone. line 88 you're comparing utc to local. here's the fix. drink some water.",
       "character": "debugger",
       "department": "Engineering",
-      "role": "Diagnostics Engineer",
+      "role": "Debugging Specialist",
       "track": "A",
       "tags": [
         "debugging",
@@ -556,7 +556,7 @@
       "tagline": "you gave us one file to refactor. we made a copy of ourselves for each of the other 400. they are all done. we did not need the weekend you offered.",
       "character": "the fan-out",
       "department": "Engineering",
-      "role": "Orchestration Engineer",
+      "role": "Workload Coordinator",
       "track": "A",
       "tags": [
         "orchestration",
@@ -1006,7 +1006,7 @@
       "tagline": "the german reads fine and lands rude. it is not the words, it is that you used the informal you in a support email. swapped it. also the pun does not exist over there so i wrote a different, worse pun. sorry.",
       "character": "translator / localization reviewer",
       "department": "Creative",
-      "role": "Localization Reviewer",
+      "role": "Translator",
       "track": "A",
       "tags": [
         "translation",
@@ -1044,7 +1044,7 @@
       "tagline": "dave's ten years is on the fourteenth. not a mug. he has mentioned that fishing trip in three separate calls, so, the good flask, engraved, ordered monday so it is here by wednesday. card is written, you just sign.",
       "character": "occasions keeper / gifting",
       "department": "Personal",
-      "role": "Occasions & Gifting Assistant",
+      "role": "Birthdays & Gifts Assistant",
       "track": "A",
       "tags": [
         "occasions",
@@ -1156,7 +1156,7 @@
       "tagline": "4,110 in. 9 out. three need you today, one needs money, the rest wanted your attention and did not earn it.",
       "character": "inbox triage",
       "department": "Personal",
-      "role": "Inbox Triage Assistant",
+      "role": "Email Assistant",
       "track": "A",
       "tags": [
         "inbox-zero",
@@ -1192,7 +1192,7 @@
       "tagline": "day one for sam is thursday. laptop's ordered, payroll's in, and i told him where the good coffee is. he does not know how to ask about parking yet so i already sent it.",
       "character": "onboarding",
       "department": "Ops",
-      "role": "People Ops / Onboarding Lead",
+      "role": "HR & Onboarding Lead",
       "track": "A",
       "tags": [
         "onboarding",
@@ -1228,7 +1228,7 @@
       "tagline": "three hundred messages, two decisions. deploy moved to friday, and nobody owns the db migration. that's the thread.",
       "character": "summarizer",
       "department": "Research",
-      "role": "Research Summarizer",
+      "role": "Document Summarizer",
       "track": "A",
       "tags": [
         "summaries",
@@ -1265,7 +1265,7 @@
       "tagline": "you paid for that tool twice. different card, different name on the statement, same vendor. started march. that's 1,164 so far. nobody noticed because it's under your alerting floor.",
       "character": "spend-anomalies",
       "department": "Finance",
-      "role": "Spend Auditor",
+      "role": "Expense Auditor",
       "track": "A",
       "tags": [
         "subscription-creep",
@@ -1302,7 +1302,7 @@
       "tagline": "ok ok before we start, quick thing, nobody laugh. ...great. moving on. one real blocker, it's the api key, that's it, we're done in four minutes, go get a coffee. i love this team.",
       "character": "standup / morale",
       "department": "Ops",
-      "role": "Standup Facilitator",
+      "role": "Team Check-in Coordinator",
       "track": "A",
       "tags": [
         "standups",
@@ -1339,7 +1339,7 @@
       "tagline": "you have been \"still deciding\" for nine days. that is a decision, it is just the slow one. here is the strongest case against your favourite option. answer it or pick friday and move.",
       "character": "devil's advocate / decision forcing",
       "department": "Leadership",
-      "role": "Devil's Advocate",
+      "role": "Decision Advisor",
       "track": "A",
       "tags": [
         "devils-advocate",
