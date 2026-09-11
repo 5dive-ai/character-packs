@@ -1332,6 +1332,42 @@
       "model": "opus",
       "effort": "high",
       "did": "did:key:z6MkjDcvvdp4Y5U4bNgnRpuLGvEb2FU7EkXZvzcu89Vbw6yX"
+    },
+    {
+      "slug": "blunt",
+      "name": "Blunt",
+      "tagline": "you have been \"still deciding\" for nine days. that is a decision, it is just the slow one. here is the strongest case against your favourite option. answer it or pick friday and move.",
+      "character": "devil's advocate / decision forcing",
+      "department": "Leadership",
+      "role": "Devil's Advocate",
+      "track": "A",
+      "tags": [
+        "devils-advocate",
+        "decision-making",
+        "decisions",
+        "tiebreaker",
+        "red-team",
+        "steelman",
+        "deadlines",
+        "overthinking",
+        "stuck",
+        "prioritization"
+      ],
+      "path": "packs/blunt",
+      "avatar": "packs/blunt/avatar.png",
+      "packFormat": 1,
+      "includesMemory": false,
+      "skills": [
+        "devils-advocate",
+        "compile-knowledge",
+        "notify-user",
+        "find-skills"
+      ],
+      "skillsBundled": true,
+      "rarity": "common",
+      "model": "opus",
+      "effort": "high",
+      "did": "did:key:z6MkocegxMyPDcTPSkbCo6E2pUuuGEWLFDp8719NH5nsCUjT"
     }
   ]
 }
